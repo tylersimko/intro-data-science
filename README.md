@@ -11,4 +11,4 @@ Lessons:
 3. [Data Visualization](lessons/lesson_3.Rmd): Basics of data visualization with `ggplot2` ([RPubs](https://rpubs.com/tylersimko/lesson3)).
 4. [Summarizing Data](lessons/lesson_4.Rmd): Calculating statistics, visualizing distributions, etc. ([RPubs](https://rpubs.com/tylersimko/lesson4)).
 5. [Mapping and Merging Data](lessons/lesson_5.Rmd): Maps with `sf`, merging data. ([RPubs](https://rpubs.com/tylersimko/lesson5)).
-6. [Review and Advancecd Plotting](lessons/lessons_6.Rmd): Review and advanced plotting (scales, reorder, plotting multiple datasets, etc.) ((RPubs)[https://rpubs.com/tylersimko/lesson6])
+6. [Review and Advancecd Plotting](lessons/lessons_6.Rmd): Review and advanced plotting (scales, reorder, plotting multiple datasets, etc.) ([RPubs](https://rpubs.com/tylersimko/lesson6))
