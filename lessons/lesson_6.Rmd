@@ -1,5 +1,5 @@
 ---
-title: "Lesson 6: First part"
+title: "Lesson 6: Review & Advanced Plotting"
 author: "Tyler Simko"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output: 
@@ -15,12 +15,236 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Complete review
+We have already covered a lot! Let's take a step back and review everything that we have learned so far. This is based very closely [on a practice exam](https://github.com/tylersimko/gov50_practice_exam1) I gave to my Harvard students in Fall 2020.
 
-Pivots
+We will use data from the College Scorecard, a public dataset from the US Department of Education that contains information about colleges and universities in the United States. Here is the link to where the dataset was acquired: 
 
-Patchwork
+https://collegescorecard.ed.gov/data/
 
-## other ideas
+The relevant columns in the data are described below:
 
-correlation vs. causation
+----------------------------------------------------------------------------------------
+ Name                          Description
+ ----------------------------- ---------------------------------------------------------
+ `name`                        Name
+ 
+ `state`                       State
+ 
+ `region`                      US region
+ 
+ `lat`                         Latitude
+ 
+ `lon`                         Longitude
+ 
+ `campuses`                    Number of campuses
+ 
+ `id`                          Institution ID - shared between campuses
+ 
+ `id_long`                     Longer ID - unique to every row
+ 
+ `class`                       College-type indicator
+ 
+ `locale`                      City, town, rural, etc.
+ 
+ `ug_enrollment`               Number of enrolled undergraduates 2020
+ 
+ `main_campus`                 1 if main campus, 0 otherwise
+ 
+ `hbcu`                        Historically Black College / University
+ 
+ `women_only`                  Women-only college / university
+ 
+ `religious_affiliation`       1 if religiously affiliated, NA otherwise
+
+ `admission_rate`              Overall admission rate
+ 
+ `social_sciences`             Percentage of all degrees in social sciences
+ 
+ `physical_sciences`           Percentage of all degrees in physical sciences
+ 
+ `ethnic_gender_sciences`      Percentage of all degrees in ethnic, gender, group, or cultural studies
+ 
+ `comp_sci`                    Percentage of all degrees in computer science
+ 
+ `avg_faculty_salary`          Average monthly faculty salary
+ 
+ `completion_rate`             Average 4-year completion rate
+ 
+ `pell_grant`                  Percentage of undergraduates on a Pell Grant
+ 
+ `first_gen_completion_4`      Percentage of first-gen students who complete degree in 4 years
+-------------------------------------------------------------------------------
+
+# Question 1: `group_by()` and `summarise()`
+
+### Exercise
+
+First, let's read in the data. It is a .csv file, so we can use `read_csv()`. Don't forget to call `library(tidyverse)` to access these functions. 
+
+```{r}
+library(tidyverse)
+colleges <- read_csv("data/college_scorecard.csv")
+```
+
+Using `group_by()` and `summarise()`, calculate the proportion of religious colleges in each region of the United States. One way to do this is by creating these two new columns:
+
+1. `religious_num` = the number of colleges and universities with a religious affiliation in each region of the US. `religious_affiliation` is a 1 or 0 value, so adding all of them up would give you the number. If you get an NA result, trying adding `na.rm = TRUE` as an argument to your function. To see what it does, try running `?sum` to see the documentation.
+2. `religious_prop` = the **proportion** of all colleges and universities in that region that have a religious affiliation. A proportion is a number divided by the total. To get the total number of observations in a group defined by `group_by()`, you can use the `n()` function.
+
+Save your result into an object called `region_religion`. 
+
+```{r}
+region_religion <- colleges %>% 
+  group_by(region) %>%
+  summarise(religious_num = sum(religious_affiliation, na.rm = T),
+            religious_prop = religious_num / n(), 
+            .groups = "drop")
+```
+
+# Question 2: Practice Plotting
+
+Now, let's use the `region_religion` object to make a plot. 
+
+First, filter out the "US Service Schools" from the `region` column. Then, create a barplot (with `geom_col()`) that has `region` on the x-axis and `religious_prop` on the y-axis. Add an appropriate title, axis labels, and a theme. Finally, try flipping the axes with `coord_flip()`.
+
+Once you're done, visit [this website: https://coolors.co/](https://coolors.co/) to find a nice color for your bars. Click on "Start the Generator" and press the space bar until you find a color you like. The sequence of letters is called a **HEX Code** and it's one way to represent colors. Luckily, R recognizes this. In `geom_col()` (or any geom), you can use `fill = ` or `color = ` followed by the HEX code with a `#` in front of it. For example, `geom_col(fill = "#69A297")`. 
+
+```{r}
+region_religion %>%
+  ggplot(aes(x = region, y = religious_prop)) + 
+    geom_col(fill = "#69A297") + 
+    coord_flip() + 
+    theme_bw() + 
+    labs(title = "Proportion of Colleges with a Religious Affiliation",
+         x = "Region",
+         y = "Religious Proportion")
+```
+
+### Reordering
+
+This looks great, but it's not immediately clear how the bar values relate to each other. For example, the Rocky Mountains and New England have very similar values. It might be nice to reorder these bars so they appear in order. 
+
+This is what the `reorder()` function is for. It takes two arguments - the column you want to order, and the value you want to order it by. For example, here we want to order the `region` variable by `religious_prop`, so the size of the bars increase as you move up the plot.
+
+```{r}
+region_religion %>%
+  filter(region != "US Service Schools") %>% 
+  ggplot(aes(x = reorder(region, religious_prop), y = religious_prop)) + 
+    geom_col(fill = "#69A297") + 
+    coord_flip() + 
+    theme_bw() + 
+    labs(title = "Proportion of Colleges with a Religious Affiliation",
+         x = "Region",
+         y = "Religious Proportion")
+```
+
+### Scales
+
+So far, we have let `gplot()` decide many things about our plots automatically that you may not have noticed. For example, all of the Religious Proportion axis values (0.0, 0.1, 0.2, etc.) might look nicer as percentages (10%, 20%, etc.).
+
+**Scales** control these visual characteristics of plots. Every aesthetic in your plot (`x`, `y`, variables like `fill` or `color` if you use them) is controlled by a scale. 
+
+You can control scales with a function. Here, the y-axis for Religious Proportion is a continuous value (R still thinks of it as y-axis even though we used `coord_flip()`), so we use `scale_y_continuous()`. We want to change text of the x-axis `breaks`, so we use the `breaks` and `labels` arguments. Remember, you can always run `?scale_y_continuous` to learn how a function works.
+
+```{r}
+# breaks tells R the numeric values on the plot
+# labels tells R what to print as text for those breaks
+region_religion %>%
+  filter(region != "US Service Schools") %>% 
+  ggplot(aes(x = reorder(region, religious_prop), y = religious_prop)) + 
+    geom_col(fill = "#69A297") + 
+    coord_flip() + 
+    theme_bw() + 
+    labs(title = "Proportion of Colleges with a Religious Affiliation",
+         x = "Region",
+         y = "Religious Proportion") +
+  scale_y_continuous(breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+                      labels = c("0%", "10%", "20%", "30%", "40%", "50%"))
+```
+
+### Exercise
+
+Using another column (`hbcu` or `women_only` might be most straightforward, but your group can choose any!), create another barplot to visualize something. You can use `region` as the grouping variable or something else (`state` might be a good choice).
+
+Once it's done, we will combine this with your first plot to display both at once. If you are own your own computer, install the `patchwork` package with `install.packages("patchwork")` (if you are on RStudio Cloud, I have already installed it for you). Then run `library(patchwork)` to load it. 
+
+Save your first plot to an object, save your second plot to an object, and then try adding your plot objects together with `+` to see what happens!
+
+# Question 3: Practice Mapping
+
+You may have noticed that the `colleges` dataset has latitude and longitude columns. These are geographic locations and `geom_sf()` knows how to work with latitude and longitude, so let's plot them!
+
+Let's plot them on a map of the United States. Read in the `data/world.rds` data from last time. Don't forget to run `library(sf)`. Make a map using `world` and `geom_sf()` of only the United States. Use `coord_sf()` with `xlim = c(-125, -68)` and `ylim = c(23, 50)` to focus on the correct area.
+
+```{r}
+library(sf)
+world <- readRDS("data/world.rds")
+
+world %>% 
+  filter(NAME == "United States") %>%
+  ggplot() + 
+    geom_sf() +
+    coord_sf(xlim = c(-125, -68),
+             ylim = c(23, 50))
+```
+
+Now, let's put the two datasets on the same map! How should use you add a new geom to the map? Like always, we can simply add it with `+`. Let's represent colleges with points using `geom_point()`. 
+
+Since you're using a new dataset, you will need to specify `data = ` in the geom you use. You want the position to depend on the values in the dataset (instead of being a fixed value, like all being the color blue), so we need to use `aes()` too. Outside of the `aes()`, try setting `alpha = 0.5` in `geom_point()`. Alpha controls the opacity of points, which will it easier to see when points overlap.
+
+For some extra pizzazz, we can color the points by the region of the college.
+
+Let's remove any college in "US Outlying Areas" since they won't show up on the map. Finally, we'll save our map to an object called `us_colleges`.
+
+```{r}
+mainland <- colleges %>%
+  filter(region != "US Outlying Areas")
+  
+us_colleges <- world %>% 
+  filter(NAME == "United States") %>%
+  ggplot() + geom_sf(fill = "#F5F3F5") + 
+    geom_point(data = mainland, 
+               aes(x = lon, y = lat, color = region), alpha = 0.5) + 
+    coord_sf(xlim = c(-125, -68),
+             ylim = c(23, 50))
+us_colleges
+```
+
+# Question 4: Practice Scales
+
+### Exercise
+
+Look at your `us_colleges` map again. Notice that we have allowed `ggplot()` to automatically choose the colors for `color = region` for us. Let's fix that!
+
+We asked `color` to choose colors for a fixed number of regions (6), so the function to manually overwrite this scale is `scale_color_manual()`. You can choose your own colors by making a vector of colors and using it in the `values` argument of `scale_color_manual()`. You can also use the `name` argument to change the lowercase `region`. Add a title too!
+
+Use [https://coolors.co/](https://coolors.co/) to find six colors that you like, put them in a vector (don't forget #), and change the colors of the regions to whatever you like.
+
+```{r}
+library(ggthemes)
+
+us_colleges + 
+  scale_color_manual(name = "Region",
+                     values = c("#A22C29",
+                               "#92B4A7",
+                               "#D1AC00",
+                               "#F6BE9A",
+                               "#CC8B86",
+                               "#7D451B")) + 
+  theme_void() + 
+  labs(title = "Colleges in the United States by Region") + 
+  theme(plot.title = element_text(hjust = 0.5))
+  
+```
+
+# Question 5: Practice Exploring a Research Question
+
+### Exercise
+
+Remember the [Final Project](https://rpubs.com/tylersimko/project) requires you to ask a research question, develop a theory, and statistically investigate it in some way. Using the columns above, generate a research question with your group. Review the instructions at the link above if you need a reminder what a research question is.
+
+Then, develop a short (1-2 sentences is probably enough) theory - a potential explanation for your question.
+
+Finally, create a simple plot that directly investigates this question. Interpret your results in a sentence or two.
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

@@ -168,7 +168,7 @@ left_join(artists, countries, by = "country")
 
 ### Conditional edits - `ifelse()` and `case_when()`
 
-Here our goal is to combine data from the `world` object (which contains) geometric shapes with World Cup results from yesterday's dataset.[^2] Let's create a dataset of the number of World Cup wins per country.
+Here our goal is to combine data from the `world` object (which contains geometric shapes) with World Cup results from yesterday's dataset.[^2] Let's create a dataset of the number of World Cup wins per country.
 
 [^2]: This dataset comes from user `jokecamp` on [GitHub](https://github.com/jokecamp/FootballData).
 
@@ -186,8 +186,8 @@ Sometimes you want to directly change values in your data. For example, this dat
 `ifelse()` will let you change values directly. For example, right now the value for France in our `wc_wins` data is 1. We know it should be 2, so we could use `ifelse()` to change the value **only** if the country is France, and leave it alone otherwise. Sinec we are editing the values of a column, we can use `mutate()`:
 
 ```{r}
-# IF the team name == France, make it 2
-# IF the team name does not equal France, leave it alone (= wins)
+# if the team name == France, make it 2
+# if the team name does not equal France, leave it alone (= wins)
 wc_wins %>%
   mutate(wins = ifelse(team == "France", 2, wins))
 ```
