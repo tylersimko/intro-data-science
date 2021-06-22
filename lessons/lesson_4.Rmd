@@ -1,0 +1,355 @@
+---
+title: "Lesson 4: Summarizing Data"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+# 1. When to summarize?
+
+When designing any visualization, you need to think about **the story you want to get across.** What is the most important point are you trying to make? Find that idea, and design your visualization around it.
+
+Often, you will need to make changes to your data before it is in the format you need to make the point that you want.
+
+For example, imagine we wanted to plot the total US population over time by using the state population dataset[^1] from last time:
+
+[^1]: This dataset comes from user `JoshData` on [GitHub](https://github.com/JoshData/historical-state-population-csv/blob/primary/README.md).
+
+```{r, message = FALSE}
+library(tidyverse)
+state <- read_csv("data/state_population.csv")
+state
+```
+
+We could plot every state at once, but this would not tell us what the total US population was by year. Viewers would have to mentally add up the points:
+
+```{r}
+state %>%
+  ggplot(aes(x = year, y = population)) + 
+    geom_point()
+```
+
+What if we want to know the **total population by year**? Well, this is what the functions `group_by()` and `summarise()` are for. When used together, `group_by()` defines a group and `summarise()` will perform a calculation within each of those groups. For example, this code will run the `sum()` function on the `population` column within each group (year):
+
+```{r}
+# calculate total (sum) population by year
+pop_by_year <- state %>%
+  group_by(year) %>%
+  summarise(pop = sum(population))
+pop_by_year
+```
+Now that we have that object, we can plot total US population by year directly:
+
+```{r}
+pop_by_year %>%
+  ggplot(aes(x = year, y = pop)) + 
+    geom_col() + 
+    labs(x = "Year", 
+         y = "Population",
+         title = "US Population by Year") + 
+    theme_bw()
+
+# coord_flip() will flip axes
+pop_by_year %>%
+  ggplot(aes(x = year, y = pop)) + 
+    geom_col() + 
+    labs(x = "Year", 
+         y = "Population",
+         title = "US Population by Year") + 
+    theme_bw() + 
+    coord_flip()
+
+# a "lollipop" plot 
+# combines straight line segment with point
+pop_by_year %>%
+  ggplot(aes(x = year, y = pop)) + 
+    geom_segment(aes(x = year, xend = year, y = 0, yend = pop), col = "grey") + 
+    geom_point() + 
+    labs(x = "Year", 
+         y = "Population",
+         title = "US Population by Year") + 
+    theme_bw()
+```
+
+You can also **define groups by multiple variables**. For example, to calculate population by **region** AND **year**. For example, the population of the US South in 1932:
+
+```{r}
+region_year <- state %>%
+  group_by(region, year) %>%
+  summarise(pop = sum(population))
+region_year
+
+region_year %>%
+  ggplot(aes(x = year, y = pop)) + 
+    geom_segment(aes(x = year, xend = year, y = 0, yend = pop), col = "grey") + 
+    geom_point(size = 0.5) + 
+    labs(x = "Year", 
+         y = "Population",
+         title = "US Population by Year") + 
+    facet_wrap(~region) + 
+    theme_linedraw()
+
+# you can also use geom_col here
+region_year %>%
+  ggplot(aes(x = year, y = pop)) + 
+    geom_col() + 
+    labs(x = "Year", 
+         y = "Population",
+         title = "US Population by Year") + 
+    facet_wrap(~region) + 
+    theme_linedraw()
+```
+
+### Exercises
+
+1. [Here is a dataset](https://docs.google.com/spreadsheets/d/1f_EPrX0rntEmRSkYeT4tvLbCS9F6sFmvgDSmsA7MKD4/edit#gid=1185498437) on historical World Cup results from 1930-2006. Download it, create a new folder named `data`, and save the file in that folder. Read the dataset into an object called `cups`.[^2]
+
+[^2]: This dataset comes from user `jokecamp` on [GitHub](https://github.com/jokecamp/FootballData).
+
+```{r}
+cups <- read_csv("data/world_cups.csv")
+```
+
+2. Look at the data with `View()`. Using `group_by()` and `summarise()`, calculate the total number of goals that each team has scored across all World Cups. Save this to an object named `scored`.
+
+```{r}
+scored <- cups %>%
+  group_by(team) %>%
+  summarise(goals = sum(scored))
+```
+
+3. Select only teams that have scored at least 50 goals in total from the `scored` object. Save this in an object called `best_teams`.
+
+```{r}
+best_teams <- scored %>% filter(goals > 50)
+```
+
+4. Design a plot using `best_teams`. 
+
+```{r}
+# reorder(x, order_variable) will reorder columns
+best_teams %>%
+  ggplot(aes(x = reorder(team, goals), y = goals)) + 
+    geom_col() + 
+    coord_flip()
+```
+
+### Using groups for other statistics
+
+The sum is one interesting measurement you will want to calculate, but it is certainly not the only one. The **mean** (average) is another. Thankfully, calculating means for the complete sample or finding means within each group is very simple. All you need to do is change the function that you use in `summarise()`. .
+
+```{r}
+# find average goals scored by team in 1930
+cups %>%
+  filter(year == 1930) %>%
+  summarise(scored = mean(scored))
+
+# find average goals scored by team per match in 1930
+cups %>%
+  filter(year == 1930) %>%
+  summarise(scored = mean(scored / matches))
+
+# find average goals scored per match in every year
+cups %>%
+  group_by(year) %>%
+  summarise(scored = mean(scored))
+```
+The **median** of a set of numbers is found by ordering them from smallest to largest and finding the value in the middle. Means and medians are both ways of estimating the center of a dataset, but they do have important differences in some cases. For example:
+
+```{r}
+numbers <- c(1, 3, 7, 9, 2000)
+
+# notice how the mean is sensitive to outliers
+mean(numbers)
+
+# the median is not as sensitive
+median(numbers)
+```
+
+# 2. Visualizing distributions
+
+Statistics like sums, means, and medians are one way of summarizing data, but they still only tell you one number. Sometimes, you will want to visualize all of the values in a column or two of your dataset - the entire **distribution**.
+
+### Histograms
+
+For example, a **histogram** will visualize all of the values in one column. Taller bars tell you that more data fit in that range:
+
+```{r}
+# visualize shots on goal since 1950
+cups %>%
+  filter(year > 1950) %>%
+  ggplot(aes(x = shots_on_goal)) + 
+    geom_histogram()
+
+# just like any other geom, can use with groups and facets
+cups %>%
+  filter(year > 1950) %>%
+  ggplot(aes(x = shots_on_goal)) + 
+    geom_histogram() + 
+    facet_wrap(~year)
+```
+
+This tells you that most teams had between 0-10 shots on goal, while some had a lot (>50). Notice the message you get when creating this plot - `stat_bin() using bins = 30. Pick better value with binwidth.` This means that `ggplot()` chose a default width for the "bins" (rectangles) it creates on the histogram, but that you can overwrite it if you want with the `binwidth` argument. `ggplot()` will often do a good job, but you can choose one that best fits your data.
+
+```{r}
+# very small binwidth
+cups %>%
+  filter(year > 1950) %>%
+  ggplot(aes(x = shots_on_goal)) + 
+    geom_histogram(binwidth = 1)
+
+# very large binwidth - not as informative!
+cups %>%
+  filter(year > 1950) %>%
+  ggplot(aes(x = shots_on_goal)) + 
+    geom_histogram(binwidth = 25)
+```
+
+### Densities
+
+Histograms are good for individual discrete values (like the number of shots or games won), but bins can be too coarse for continuous values. For example, the number of goals scored per match would have decimal values:
+
+```{r}
+# histogram looks okay here, but you may want a smoother distribution
+cups %>%
+  filter(year > 1950) %>%
+  group_by(team) %>%
+  summarise(per_match = scored / matches) %>%
+  ggplot(aes(x = per_match)) +
+    geom_histogram()
+
+# geom_density() will try to smooth it out for you
+cups %>%
+  filter(year > 1950) %>%
+  group_by(team) %>%
+  summarise(per_match = scored / matches) %>%
+  ggplot(aes(x = per_match)) +
+    geom_density()
+
+# can facet just like always
+cups %>%
+  group_by(year, team) %>%
+  summarise(per_match = scored / matches) %>%
+  ggplot(aes(x = per_match)) + 
+    geom_density() + 
+    facet_wrap(~year)
+```
+
+### Exercises
+
+1. Read in the `elections` data from the other day. Then, create a histogram to visualize Democratic performance in all elections since and including 1992 (`>= 1992`) with one plot for each region.
+
+For an extra challenge, try adding a vertical line to the plot at 50 with the `geom_vline()` function (don't forget that you can read the documentation for a function with `?geom_vline`, then scroll down to "Examples" to see code examples using the function).
+
+Finally, explain the general trend that you see.
+
+```{r}
+elections <- read_csv("data/pres_elections.csv")
+
+elections %>%
+  filter(year >= 1992) %>%
+  ggplot(aes(x = democrat)) + 
+    geom_histogram(binwidth = 2) + 
+    facet_wrap(~region) + 
+    geom_vline(xintercept = 50, col = "blue", lty = "dashed") + 
+    theme_bw()
+```
+
+2. Using **only results from states in the South**, create a density plot for `democrat` with one plot per year. Try adding a vertical line at 50 as described above.
+
+Describe the general trend you see over time.
+
+```{r}
+elections %>%
+  filter(region == "South") %>%
+  ggplot(aes(x = democrat)) + 
+    geom_density() + 
+    facet_wrap(~year) + 
+    geom_vline(xintercept = 50, col = "blue", lty = "dashed") + 
+    theme_bw()
+```
+
+3. Think about the trend you saw in Question 2. Clearly describe it. Discuss a way you might visualize that trend. If you have time, try designing a plot to do so.
+
+### Boxplots
+
+Histograms and densities are great, but sometimes you want to clearly show particular values in your dataset on your visualization like the median. Boxplots do this by clearly visualizing **quartiles** in your dataset. 
+
+What is a quartile? Quartiles split your data into four parts:
+
+1. 25\% of the values in your dataset $<$ **First Quartile**.
+2. 50\% of the values in your dataset $<$ **Second Quartile**. (this is the **median**!).
+3. 75\% of the values in your dataset $<$ **Third Quartile**
+
+For example:
+
+```{r}
+# quantile() defaults to quartiles
+seq(0, 100, by = 1) %>% quantile()
+seq(0, 50, by = 1) %>% quantile()
+```
+
+```{r}
+elections %>%
+  ggplot(aes(x = democrat)) + 
+  geom_boxplot()
+
+# you can use fill in aes() to color by a variable
+elections %>%
+  ggplot(aes(x = region, y = democrat)) + 
+  geom_boxplot()
+
+# works both ways! or use coord_flip()
+elections %>%
+  ggplot(aes(x = democrat, y = region)) + 
+  geom_boxplot()
+```
+
+Now, let's think about the trend you saw in Exercise 2. How could we use boxplots to visualize this?
+
+```{r}
+# check the warning, what is it trying to tell us? 	
+# continuous x aesthetic -- did you forget aes(group=...)?
+elections %>%
+  filter(region == "South") %>%
+  ggplot(aes(x = year, y = democrat)) + 
+  geom_boxplot()
+
+# trust the hints
+elections %>%
+  filter(region == "South") %>%
+  ggplot(aes(x = year, y = democrat, group = year)) + 
+  geom_boxplot() + 
+  geom_hline(yintercept = 50, col = "blue", lty = "dashed")
+
+# notice the large outlier in the South in later years
+# how could we find out which point that is?
+```
+
+Boxplots use quartiles (since they split data into 4 groups), but other measurements like **percentiles** can be useful as well. Percentiles split your data into 100, so the 13th percentile is greater than or equal to 13\% of your values, the 99\% percentile is greater than 99\% of your values, etc.
+
+### Exercises
+
+1. Using the World Cup `cups`  dataset, create a boxplot of goals scored for every year.
+
+```{r}
+cups %>%
+  filter(year >= 1950) %>%
+  ggplot(aes(x = year, y = scored, group = year)) + 
+    geom_boxplot()
+
+# this is technically right too - why is it maybe less desirable?
+cups %>%
+  filter(year >= 1950) %>%
+  ggplot(aes(x = scored)) + 
+    geom_boxplot() + 
+    facet_wrap(~year)
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

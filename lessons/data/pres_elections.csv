@@ -1,0 +1,1098 @@
+state,abb,democrat,year,region
+Alabama,AL,84.76,1932,South
+Arizona,AZ,67.03,1932,West
+Arkansas,AR,86.27,1932,South
+California,CA,58.41,1932,West
+Colorado,CO,54.81,1932,West
+Connecticut,CT,47.4,1932,Northeast
+Delaware,DE,48.11,1932,South
+Florida,FL,74.49,1932,South
+Georgia,GA,91.6,1932,South
+Idaho,ID,58.7,1932,West
+Illinois,IL,55.23,1932,Midwest
+Indiana,IN,54.67,1932,Midwest
+Iowa,IA,57.69,1932,Midwest
+Kansas,KS,53.56,1932,Midwest
+Kentucky,KY,59.06,1932,South
+Louisiana,LA,92.79,1932,South
+Maine,ME,43.19,1932,Northeast
+Maryland,MD,61.5,1932,South
+Massachusetts,MA,50.64,1932,Northeast
+Michigan,MI,52.36,1932,Midwest
+Minnesota,MN,59.91,1932,Midwest
+Mississippi,MS,95.98,1932,South
+Missouri,MO,63.69,1932,Midwest
+Montana,MT,58.8,1932,West
+Nebraska,NE,62.98,1932,Midwest
+Nevada,NV,69.41,1932,West
+New Hampshire,NH,48.99,1932,Northeast
+New Jersey,NJ,49.48,1932,Northeast
+New Mexico,NM,62.72,1932,West
+New York,NY,54.07,1932,Northeast
+North Carolina,NC,69.93,1932,South
+North Dakota,ND,69.59,1932,Midwest
+Ohio,OH,49.88,1932,Midwest
+Oklahoma,OK,73.3,1932,South
+Oregon,OR,58,1932,West
+Pennsylvania,PA,45.33,1932,Northeast
+Rhode Island,RI,55.08,1932,Northeast
+South Carolina,SC,98.03,1932,South
+South Dakota,SD,63.62,1932,Midwest
+Tennessee,TN,66.48,1932,South
+Texas,TX,88.19,1932,South
+Utah,UT,56.52,1932,West
+Vermont,VT,41.08,1932,Northeast
+Virginia,VA,68.46,1932,South
+Washington,WA,57.46,1932,West
+West Virginia,WV,54.47,1932,South
+Wisconsin,WI,63.46,1932,Midwest
+Wyoming,WY,56.07,1932,West
+Alabama,AL,86.38,1936,South
+Arizona,AZ,69.85,1936,West
+Arkansas,AR,81.79,1936,South
+California,CA,66.95,1936,West
+Colorado,CO,60.37,1936,West
+Connecticut,CT,55.32,1936,Northeast
+Delaware,DE,54.62,1936,South
+Florida,FL,76.08,1936,South
+Georgia,GA,87.1,1936,South
+Idaho,ID,62.96,1936,West
+Illinois,IL,57.7,1936,Midwest
+Indiana,IN,56.63,1936,Midwest
+Iowa,IA,54.41,1936,Midwest
+Kansas,KS,53.67,1936,Midwest
+Kentucky,KY,58.51,1936,South
+Louisiana,LA,88.82,1936,South
+Maine,ME,41.52,1936,Northeast
+Maryland,MD,62.35,1936,South
+Massachusetts,MA,51.22,1936,Northeast
+Michigan,MI,56.33,1936,Midwest
+Minnesota,MN,61.84,1936,Midwest
+Mississippi,MS,97.03,1936,South
+Missouri,MO,60.76,1936,Midwest
+Montana,MT,69.28,1936,West
+Nebraska,NE,57.14,1936,Midwest
+Nevada,NV,72.81,1936,West
+New Hampshire,NH,49.73,1936,Northeast
+New Jersey,NJ,59.54,1936,Northeast
+New Mexico,NM,62.69,1936,West
+New York,NY,58.85,1936,Northeast
+North Carolina,NC,73.4,1936,South
+North Dakota,ND,59.6,1936,Midwest
+Ohio,OH,57.99,1936,Midwest
+Oklahoma,OK,66.83,1936,South
+Oregon,OR,64.41,1936,West
+Pennsylvania,PA,56.88,1936,Northeast
+Rhode Island,RI,52.96,1936,Northeast
+South Carolina,SC,98.57,1936,South
+South Dakota,SD,54.02,1936,Midwest
+Tennessee,TN,68.77,1936,South
+Texas,TX,87.08,1936,South
+Utah,UT,69.34,1936,West
+Vermont,VT,43.24,1936,Northeast
+Virginia,VA,70.23,1936,South
+Washington,WA,66.38,1936,West
+West Virginia,WV,60.56,1936,South
+Wisconsin,WI,63.8,1936,Midwest
+Wyoming,WY,60.58,1936,West
+Alabama,AL,85.22,1940,South
+Arizona,AZ,63.49,1940,West
+Arkansas,AR,78.44,1940,South
+California,CA,57.44,1940,West
+Colorado,CO,48.37,1940,West
+Connecticut,CT,53.44,1940,Northeast
+Delaware,DE,54.7,1940,South
+Florida,FL,73.99,1940,South
+Georgia,GA,84.81,1940,South
+Idaho,ID,54.36,1940,West
+Illinois,IL,50.97,1940,Midwest
+Indiana,IN,49.03,1940,Midwest
+Iowa,IA,47.62,1940,Midwest
+Kansas,KS,42.4,1940,Midwest
+Kentucky,KY,57.45,1940,South
+Louisiana,LA,85.88,1940,South
+Maine,ME,48.77,1940,Northeast
+Maryland,MD,58.26,1940,South
+Massachusetts,MA,53.11,1940,Northeast
+Michigan,MI,49.52,1940,Midwest
+Minnesota,MN,51.49,1940,Midwest
+Mississippi,MS,95.7,1940,South
+Missouri,MO,52.27,1940,Midwest
+Montana,MT,58.78,1940,West
+Nebraska,NE,42.81,1940,Midwest
+Nevada,NV,60.08,1940,West
+New Hampshire,NH,53.22,1940,Northeast
+New Jersey,NJ,51.55,1940,Northeast
+New Mexico,NM,56.59,1940,West
+New York,NY,51.6,1940,Northeast
+North Carolina,NC,74.03,1940,South
+North Dakota,ND,44.18,1940,Midwest
+Ohio,OH,52.2,1940,Midwest
+Oklahoma,OK,57.41,1940,South
+Oregon,OR,53.7,1940,West
+Pennsylvania,PA,53.23,1940,Northeast
+Rhode Island,RI,56.73,1940,Northeast
+South Carolina,SC,95.63,1940,South
+South Dakota,SD,42.59,1940,Midwest
+Tennessee,TN,67.25,1940,South
+Texas,TX,80.93,1940,South
+Utah,UT,62.25,1940,West
+Vermont,VT,44.92,1940,Northeast
+Virginia,VA,68.08,1940,South
+Washington,WA,58.22,1940,West
+West Virginia,WV,57.1,1940,South
+Wisconsin,WI,50.15,1940,Midwest
+Wyoming,WY,52.82,1940,West
+Alabama,AL,81.28,1944,South
+Arizona,AZ,58.8,1944,West
+Arkansas,AR,69.95,1944,South
+California,CA,56.48,1944,West
+Colorado,CO,46.4,1944,West
+Connecticut,CT,52.3,1944,Northeast
+Delaware,DE,54.38,1944,South
+Florida,FL,70.29,1944,South
+Georgia,GA,81.73,1944,South
+Idaho,ID,51.55,1944,West
+Illinois,IL,51.52,1944,Midwest
+Indiana,IN,46.73,1944,Midwest
+Iowa,IA,47.49,1944,Midwest
+Kansas,KS,39.18,1944,Midwest
+Kentucky,KY,54.45,1944,South
+Louisiana,LA,80.59,1944,South
+Maine,ME,47.45,1944,Northeast
+Maryland,MD,51.85,1944,South
+Massachusetts,MA,52.8,1944,Northeast
+Michigan,MI,50.19,1944,Midwest
+Minnesota,MN,52.41,1944,Midwest
+Mississippi,MS,93.56,1944,South
+Missouri,MO,51.37,1944,Midwest
+Montana,MT,54.28,1944,West
+Nebraska,NE,41.42,1944,Midwest
+Nevada,NV,54.62,1944,West
+New Hampshire,NH,52.11,1944,Northeast
+New Jersey,NJ,50.31,1944,Northeast
+New Mexico,NM,53.47,1944,West
+New York,NY,52.31,1944,Northeast
+North Carolina,NC,66.71,1944,South
+North Dakota,ND,45.48,1944,Midwest
+Ohio,OH,49.82,1944,Midwest
+Oklahoma,OK,55.57,1944,South
+Oregon,OR,51.78,1944,West
+Pennsylvania,PA,51.14,1944,Northeast
+Rhode Island,RI,58.59,1944,Northeast
+South Carolina,SC,87.64,1944,South
+South Dakota,SD,41.67,1944,Midwest
+Tennessee,TN,60.45,1944,South
+Texas,TX,71.42,1944,South
+Utah,UT,60.44,1944,West
+Vermont,VT,42.93,1944,Northeast
+Virginia,VA,62.36,1944,South
+Washington,WA,56.84,1944,West
+West Virginia,WV,54.89,1944,South
+Wisconsin,WI,48.57,1944,Midwest
+Wyoming,WY,48.77,1944,West
+Arizona,AZ,53.79,1948,West
+Arkansas,AR,61.72,1948,South
+California,CA,47.57,1948,West
+Colorado,CO,51.88,1948,West
+Connecticut,CT,47.91,1948,Northeast
+Delaware,DE,48.76,1948,South
+Florida,FL,48.82,1948,South
+Georgia,GA,60.8,1948,South
+Idaho,ID,49.98,1948,West
+Illinois,IL,50.07,1948,Midwest
+Indiana,IN,48.78,1948,Midwest
+Iowa,IA,50.31,1948,Midwest
+Kansas,KS,44.61,1948,Midwest
+Kentucky,KY,56.74,1948,South
+Louisiana,LA,32.75,1948,South
+Maine,ME,42.27,1948,Northeast
+Maryland,MD,48.01,1948,South
+Massachusetts,MA,54.66,1948,Northeast
+Michigan,MI,47.57,1948,Midwest
+Minnesota,MN,57.16,1948,Midwest
+Mississippi,MS,10.09,1948,South
+Missouri,MO,58.11,1948,Midwest
+Montana,MT,53.09,1948,West
+Nebraska,NE,45.85,1948,Midwest
+Nevada,NV,50.37,1948,West
+New Hampshire,NH,46.66,1948,Northeast
+New Jersey,NJ,45.93,1948,Northeast
+New Mexico,NM,56.38,1948,West
+New York,NY,45.01,1948,Northeast
+North Carolina,NC,58.02,1948,South
+North Dakota,ND,43.41,1948,Midwest
+Ohio,OH,49.48,1948,Midwest
+Oklahoma,OK,62.75,1948,South
+Oregon,OR,46.4,1948,West
+Pennsylvania,PA,46.91,1948,Northeast
+Rhode Island,RI,57.59,1948,Northeast
+South Carolina,SC,24.14,1948,South
+South Dakota,SD,47.04,1948,Midwest
+Tennessee,TN,49.14,1948,South
+Texas,TX,65.96,1948,South
+Utah,UT,53.98,1948,West
+Vermont,VT,36.92,1948,Northeast
+Virginia,VA,47.89,1948,South
+Washington,WA,52.61,1948,West
+West Virginia,WV,57.32,1948,South
+Wisconsin,WI,50.7,1948,Midwest
+Wyoming,WY,51.62,1948,West
+Alabama,AL,64.55,1952,South
+Arizona,AZ,41.65,1952,West
+Arkansas,AR,55.9,1952,South
+California,CA,42.74,1952,West
+Colorado,CO,38.96,1952,West
+Connecticut,CT,43.91,1952,Northeast
+Delaware,DE,47.88,1952,South
+Florida,FL,44.97,1952,South
+Georgia,GA,69.66,1952,South
+Idaho,ID,34.42,1952,West
+Illinois,IL,44.94,1952,Midwest
+Indiana,IN,40.99,1952,Midwest
+Iowa,IA,35.59,1952,Midwest
+Kansas,KS,30.5,1952,Midwest
+Kentucky,KY,49.91,1952,South
+Louisiana,LA,52.92,1952,South
+Maine,ME,33.77,1952,Northeast
+Maryland,MD,43.83,1952,South
+Massachusetts,MA,45.46,1952,Northeast
+Michigan,MI,43.97,1952,Midwest
+Minnesota,MN,44.11,1952,Midwest
+Mississippi,MS,60.44,1952,South
+Missouri,MO,49.14,1952,Midwest
+Montana,MT,40.07,1952,West
+Nebraska,NE,30.85,1952,Midwest
+Nevada,NV,38.55,1952,West
+New Hampshire,NH,39.08,1952,Northeast
+New Jersey,NJ,42,1952,Northeast
+New Mexico,NM,44.28,1952,West
+New York,NY,43.55,1952,Northeast
+North Carolina,NC,53.91,1952,South
+North Dakota,ND,28.39,1952,Midwest
+Ohio,OH,43.24,1952,Midwest
+Oklahoma,OK,45.41,1952,South
+Oregon,OR,38.93,1952,West
+Pennsylvania,PA,46.85,1952,Northeast
+Rhode Island,RI,49.05,1952,Northeast
+South Carolina,SC,50.72,1952,South
+South Dakota,SD,30.73,1952,Midwest
+Tennessee,TN,49.71,1952,South
+Texas,TX,46.69,1952,South
+Utah,UT,41.07,1952,West
+Vermont,VT,28.23,1952,Northeast
+Virginia,VA,43.36,1952,South
+Washington,WA,44.69,1952,West
+West Virginia,WV,51.92,1952,South
+Wisconsin,WI,38.71,1952,Midwest
+Wyoming,WY,37.09,1952,West
+Alabama,AL,56.52,1956,South
+Arizona,AZ,38.9,1956,West
+Arkansas,AR,52.46,1956,South
+California,CA,44.27,1956,West
+Colorado,CO,39.26,1956,West
+Connecticut,CT,36.26,1956,Northeast
+Delaware,DE,44.62,1956,South
+Florida,FL,42.67,1956,South
+Georgia,GA,66.41,1956,South
+Idaho,ID,38.78,1956,West
+Illinois,IL,40.29,1956,Midwest
+Indiana,IN,39.7,1956,Midwest
+Iowa,IA,40.65,1956,Midwest
+Kansas,KS,34.21,1956,Midwest
+Kentucky,KY,45.21,1956,South
+Louisiana,LA,39.51,1956,South
+Maine,ME,29.13,1956,Northeast
+Maryland,MD,39.94,1956,South
+Massachusetts,MA,40.37,1956,Northeast
+Michigan,MI,44.15,1956,Midwest
+Minnesota,MN,46.08,1956,Midwest
+Mississippi,MS,58.22,1956,South
+Missouri,MO,50.11,1956,Midwest
+Montana,MT,42.87,1956,West
+Nebraska,NE,34.49,1956,Midwest
+Nevada,NV,42.03,1956,West
+New Hampshire,NH,33.84,1956,Northeast
+New Jersey,NJ,34.23,1956,Northeast
+New Mexico,NM,41.78,1956,West
+New York,NY,38.73,1956,Northeast
+North Carolina,NC,50.66,1956,South
+North Dakota,ND,38.09,1956,Midwest
+Ohio,OH,38.89,1956,Midwest
+Oklahoma,OK,44.87,1956,South
+Oregon,OR,44.72,1956,West
+Pennsylvania,PA,43.3,1956,Northeast
+Rhode Island,RI,41.74,1956,Northeast
+South Carolina,SC,45.37,1956,South
+South Dakota,SD,41.61,1956,Midwest
+Tennessee,TN,48.6,1956,South
+Texas,TX,43.98,1956,South
+Utah,UT,35.44,1956,West
+Vermont,VT,27.81,1956,Northeast
+Virginia,VA,38.36,1956,South
+Washington,WA,45.44,1956,West
+West Virginia,WV,45.92,1956,South
+Wisconsin,WI,37.84,1956,Midwest
+Wyoming,WY,39.92,1956,West
+Alabama,AL,56.83,1960,South
+Alaska,AK,49.06,1960,West
+Arizona,AZ,44.36,1960,West
+Arkansas,AR,50.19,1960,South
+California,CA,49.55,1960,West
+Colorado,CO,44.91,1960,West
+Connecticut,CT,53.73,1960,Northeast
+Delaware,DE,50.63,1960,South
+Florida,FL,48.49,1960,South
+Georgia,GA,62.54,1960,South
+Hawaii,HI,50.03,1960,West
+Idaho,ID,46.22,1960,West
+Illinois,IL,49.98,1960,Midwest
+Indiana,IN,44.6,1960,Midwest
+Iowa,IA,43.22,1960,Midwest
+Kansas,KS,39.1,1960,Midwest
+Kentucky,KY,46.41,1960,South
+Louisiana,LA,50.42,1960,South
+Maine,ME,42.95,1960,Northeast
+Maryland,MD,53.61,1960,South
+Massachusetts,MA,60.22,1960,Northeast
+Michigan,MI,50.85,1960,Midwest
+Minnesota,MN,50.58,1960,Midwest
+Mississippi,MS,36.34,1960,South
+Missouri,MO,50.26,1960,Midwest
+Montana,MT,48.6,1960,West
+Nebraska,NE,37.93,1960,Midwest
+Nevada,NV,51.16,1960,West
+New Hampshire,NH,46.58,1960,Northeast
+New Jersey,NJ,49.96,1960,Northeast
+New Mexico,NM,50.15,1960,West
+New York,NY,52.53,1960,Northeast
+North Carolina,NC,52.11,1960,South
+North Dakota,ND,44.52,1960,Midwest
+Ohio,OH,46.72,1960,Midwest
+Oklahoma,OK,40.98,1960,South
+Oregon,OR,47.32,1960,West
+Pennsylvania,PA,51.06,1960,Northeast
+Rhode Island,RI,63.63,1960,Northeast
+South Carolina,SC,51.24,1960,South
+South Dakota,SD,41.79,1960,Midwest
+Tennessee,TN,45.77,1960,South
+Texas,TX,50.52,1960,South
+Utah,UT,45.17,1960,West
+Vermont,VT,41.35,1960,Northeast
+Virginia,VA,46.97,1960,South
+Washington,WA,48.27,1960,West
+West Virginia,WV,52.73,1960,South
+Wisconsin,WI,48.05,1960,Midwest
+Wyoming,WY,44.99,1960,West
+Alaska,AK,65.91,1964,West
+Arizona,AZ,49.45,1964,West
+Arkansas,AR,56.06,1964,South
+California,CA,59.11,1964,West
+Colorado,CO,61.27,1964,West
+Connecticut,CT,67.81,1964,Northeast
+Delaware,DE,60.95,1964,South
+DC,DC,85.5,1964,South
+Florida,FL,51.15,1964,South
+Georgia,GA,45.87,1964,South
+Hawaii,HI,78.76,1964,West
+Idaho,ID,50.92,1964,West
+Illinois,IL,59.47,1964,Midwest
+Indiana,IN,55.98,1964,Midwest
+Iowa,IA,61.88,1964,Midwest
+Kansas,KS,54.09,1964,Midwest
+Kentucky,KY,64.01,1964,South
+Louisiana,LA,43.19,1964,South
+Maine,ME,68.84,1964,Northeast
+Maryland,MD,65.47,1964,South
+Massachusetts,MA,76.19,1964,Northeast
+Michigan,MI,66.7,1964,Midwest
+Minnesota,MN,63.76,1964,Midwest
+Mississippi,MS,12.86,1964,South
+Missouri,MO,64.05,1964,Midwest
+Montana,MT,58.95,1964,West
+Nebraska,NE,52.61,1964,Midwest
+Nevada,NV,58.58,1964,West
+New Hampshire,NH,63.89,1964,Northeast
+New Jersey,NJ,65.61,1964,Northeast
+New Mexico,NM,59.03,1964,West
+New York,NY,68.56,1964,Northeast
+North Carolina,NC,56.15,1964,South
+North Dakota,ND,57.97,1964,Midwest
+Ohio,OH,62.94,1964,Midwest
+Oklahoma,OK,55.75,1964,South
+Oregon,OR,63.72,1964,West
+Pennsylvania,PA,64.92,1964,Northeast
+Rhode Island,RI,80.87,1964,Northeast
+South Carolina,SC,41.11,1964,South
+South Dakota,SD,55.61,1964,Midwest
+Tennessee,TN,55.5,1964,South
+Texas,TX,63.32,1964,South
+Utah,UT,54.71,1964,West
+Vermont,VT,66.3,1964,Northeast
+Virginia,VA,53.54,1964,South
+Washington,WA,61.97,1964,West
+West Virginia,WV,67.94,1964,South
+Wisconsin,WI,62.09,1964,Midwest
+Wyoming,WY,56.56,1964,West
+Alabama,AL,18.72,1968,South
+Alaska,AK,42.65,1968,West
+Arizona,AZ,35.02,1968,West
+Arkansas,AR,30.36,1968,South
+California,CA,44.74,1968,West
+Colorado,CO,41.32,1968,West
+Connecticut,CT,49.48,1968,Northeast
+Delaware,DE,41.61,1968,South
+DC,DC,81.82,1968,South
+Florida,FL,30.93,1968,South
+Georgia,GA,26.75,1968,South
+Hawaii,HI,59.83,1968,West
+Idaho,ID,30.66,1968,West
+Illinois,IL,44.15,1968,Midwest
+Indiana,IN,37.99,1968,Midwest
+Iowa,IA,40.82,1968,Midwest
+Kansas,KS,34.72,1968,Midwest
+Kentucky,KY,37.65,1968,South
+Louisiana,LA,28.21,1968,South
+Maine,ME,55.3,1968,Northeast
+Maryland,MD,43.59,1968,South
+Massachusetts,MA,63.01,1968,Northeast
+Michigan,MI,48.18,1968,Midwest
+Minnesota,MN,54,1968,Midwest
+Mississippi,MS,23.02,1968,South
+Missouri,MO,43.74,1968,Midwest
+Montana,MT,41.59,1968,West
+Nebraska,NE,31.81,1968,Midwest
+Nevada,NV,39.29,1968,West
+New Hampshire,NH,43.93,1968,Northeast
+New Jersey,NJ,43.97,1968,Northeast
+New Mexico,NM,39.74,1968,West
+New York,NY,49.74,1968,Northeast
+North Carolina,NC,29.24,1968,South
+North Dakota,ND,38.23,1968,Midwest
+Ohio,OH,42.95,1968,Midwest
+Oklahoma,OK,31.99,1968,South
+Oregon,OR,43.78,1968,West
+Pennsylvania,PA,47.59,1968,Northeast
+Rhode Island,RI,64.03,1968,Northeast
+South Carolina,SC,29.61,1968,South
+South Dakota,SD,41.96,1968,Midwest
+Tennessee,TN,28.13,1968,South
+Texas,TX,41.14,1968,South
+Utah,UT,37.07,1968,West
+Vermont,VT,43.53,1968,Northeast
+Virginia,VA,32.49,1968,South
+Washington,WA,47.23,1968,West
+West Virginia,WV,49.6,1968,South
+Wisconsin,WI,44.27,1968,Midwest
+Wyoming,WY,35.51,1968,West
+Alabama,AL,25.54,1972,South
+Alaska,AK,34.62,1972,West
+Arizona,AZ,31.87,1972,West
+Arkansas,AR,30.69,1972,South
+California,CA,41.54,1972,West
+Colorado,CO,34.59,1972,West
+Connecticut,CT,40.13,1972,Northeast
+Delaware,DE,39.18,1972,South
+DC,DC,78.1,1972,South
+Florida,FL,27.8,1972,South
+Georgia,GA,24.65,1972,South
+Hawaii,HI,37.52,1972,West
+Idaho,ID,26.04,1972,West
+Illinois,IL,40.51,1972,Midwest
+Indiana,IN,33.34,1972,Midwest
+Iowa,IA,40.48,1972,Midwest
+Kansas,KS,29.5,1972,Midwest
+Kentucky,KY,34.77,1972,South
+Louisiana,LA,28.35,1972,South
+Maine,ME,38.51,1972,Northeast
+Maryland,MD,37.36,1972,South
+Massachusetts,MA,54.2,1972,Northeast
+Michigan,MI,41.82,1972,Midwest
+Minnesota,MN,46.07,1972,Midwest
+Mississippi,MS,19.63,1972,South
+Missouri,MO,37.57,1972,Midwest
+Montana,MT,37.85,1972,West
+Nebraska,NE,29.5,1972,Midwest
+Nevada,NV,36.32,1972,West
+New Hampshire,NH,34.86,1972,Northeast
+New Jersey,NJ,36.77,1972,Northeast
+New Mexico,NM,36.53,1972,West
+New York,NY,41.18,1972,Northeast
+North Carolina,NC,28.89,1972,South
+North Dakota,ND,35.79,1972,Midwest
+Ohio,OH,38.07,1972,Midwest
+Oklahoma,OK,24,1972,South
+Oregon,OR,42.33,1972,West
+Pennsylvania,PA,39.13,1972,Northeast
+Rhode Island,RI,46.81,1972,Northeast
+South Carolina,SC,27.72,1972,South
+South Dakota,SD,45.52,1972,Midwest
+Tennessee,TN,29.75,1972,South
+Texas,TX,33.25,1972,South
+Utah,UT,26.39,1972,West
+Vermont,VT,36.47,1972,Northeast
+Virginia,VA,30.12,1972,South
+Washington,WA,38.64,1972,West
+West Virginia,WV,36.39,1972,South
+Wisconsin,WI,43.72,1972,Midwest
+Wyoming,WY,30.47,1972,West
+Alabama,AL,55.73,1976,South
+Alaska,AK,35.65,1976,West
+Arizona,AZ,39.8,1976,West
+Arkansas,AR,64.96,1976,South
+California,CA,47.57,1976,West
+Colorado,CO,42.56,1976,West
+Connecticut,CT,46.9,1976,Northeast
+Delaware,DE,51.98,1976,South
+DC,DC,81.63,1976,South
+Florida,FL,51.93,1976,South
+Georgia,GA,66.74,1976,South
+Hawaii,HI,50.59,1976,West
+Idaho,ID,36.78,1976,West
+Illinois,IL,48.13,1976,Midwest
+Indiana,IN,45.7,1976,Midwest
+Iowa,IA,48.46,1976,Midwest
+Kansas,KS,44.94,1976,Midwest
+Kentucky,KY,52.75,1976,South
+Louisiana,LA,51.73,1976,South
+Maine,ME,48.07,1976,Northeast
+Maryland,MD,52.75,1976,South
+Massachusetts,MA,56.11,1976,Northeast
+Michigan,MI,46.44,1976,Midwest
+Minnesota,MN,54.9,1976,Midwest
+Mississippi,MS,49.56,1976,South
+Missouri,MO,51.1,1976,Midwest
+Montana,MT,45.4,1976,West
+Nebraska,NE,38.46,1976,Midwest
+Nevada,NV,45.81,1976,West
+New Hampshire,NH,43.47,1976,Northeast
+New Jersey,NJ,47.92,1976,Northeast
+New Mexico,NM,48.07,1976,West
+New York,NY,51.87,1976,Northeast
+North Carolina,NC,55.24,1976,South
+North Dakota,ND,45.79,1976,Midwest
+Ohio,OH,48.92,1976,Midwest
+Oklahoma,OK,48.75,1976,South
+Oregon,OR,47.62,1976,West
+Pennsylvania,PA,50.4,1976,Northeast
+Rhode Island,RI,55.36,1976,Northeast
+South Carolina,SC,56.17,1976,South
+South Dakota,SD,48.91,1976,Midwest
+Tennessee,TN,55.94,1976,South
+Texas,TX,51.14,1976,South
+Utah,UT,33.65,1976,West
+Vermont,VT,43.11,1976,Northeast
+Virginia,VA,47.96,1976,South
+Washington,WA,46.11,1976,West
+West Virginia,WV,58.05,1976,South
+Wisconsin,WI,49.44,1976,Midwest
+Wyoming,WY,39.81,1976,West
+Alabama,AL,47.45,1980,South
+Alaska,AK,26.41,1980,West
+Arizona,AZ,28.24,1980,West
+Arkansas,AR,47.52,1980,South
+California,CA,35.91,1980,West
+Colorado,CO,31.07,1980,West
+Connecticut,CT,38.52,1980,Northeast
+Delaware,DE,44.83,1980,South
+DC,DC,74.82,1980,South
+Florida,FL,38.5,1980,South
+Georgia,GA,55.79,1980,South
+Hawaii,HI,44.8,1980,West
+Idaho,ID,25.19,1980,West
+Illinois,IL,41.72,1980,Midwest
+Indiana,IN,37.65,1980,Midwest
+Iowa,IA,38.6,1980,Midwest
+Kansas,KS,33.29,1980,Midwest
+Kentucky,KY,47.61,1980,South
+Louisiana,LA,45.75,1980,South
+Maine,ME,42.25,1980,Northeast
+Maryland,MD,47.14,1980,South
+Massachusetts,MA,41.75,1980,Northeast
+Michigan,MI,42.5,1980,Midwest
+Minnesota,MN,46.5,1980,Midwest
+Mississippi,MS,48.09,1980,South
+Missouri,MO,44.35,1980,Midwest
+Montana,MT,32.43,1980,West
+Nebraska,NE,26.04,1980,Midwest
+Nevada,NV,26.89,1980,West
+New Hampshire,NH,28.35,1980,Northeast
+New Jersey,NJ,38.56,1980,Northeast
+New Mexico,NM,36.73,1980,West
+New York,NY,43.99,1980,Northeast
+North Carolina,NC,47.18,1980,South
+North Dakota,ND,26.26,1980,Midwest
+Ohio,OH,40.91,1980,Midwest
+Oklahoma,OK,34.97,1980,South
+Oregon,OR,38.67,1980,West
+Pennsylvania,PA,42.48,1980,Northeast
+Rhode Island,RI,47.67,1980,Northeast
+South Carolina,SC,48.14,1980,South
+South Dakota,SD,31.69,1980,Midwest
+Tennessee,TN,48.41,1980,South
+Texas,TX,41.42,1980,South
+Utah,UT,20.57,1980,West
+Vermont,VT,38.42,1980,Northeast
+Virginia,VA,40.31,1980,South
+Washington,WA,37.32,1980,West
+West Virginia,WV,49.81,1980,South
+Wisconsin,WI,43.18,1980,Midwest
+Wyoming,WY,27.97,1980,West
+Alabama,AL,38.28,1984,South
+Alaska,AK,29.87,1984,West
+Arizona,AZ,32.54,1984,West
+Arkansas,AR,38.29,1984,South
+California,CA,41.27,1984,West
+Colorado,CO,35.12,1984,West
+Connecticut,CT,38.83,1984,Northeast
+Delaware,DE,39.93,1984,South
+DC,DC,85.38,1984,South
+Florida,FL,34.66,1984,South
+Georgia,GA,39.78,1984,South
+Hawaii,HI,43.82,1984,West
+Idaho,ID,26.39,1984,West
+Illinois,IL,43.3,1984,Midwest
+Indiana,IN,37.68,1984,Midwest
+Iowa,IA,45.89,1984,Midwest
+Kansas,KS,32.6,1984,Midwest
+Kentucky,KY,39.4,1984,South
+Louisiana,LA,38.18,1984,South
+Maine,ME,38.78,1984,Northeast
+Maryland,MD,47.02,1984,South
+Massachusetts,MA,48.43,1984,Northeast
+Michigan,MI,40.24,1984,Midwest
+Minnesota,MN,49.72,1984,Midwest
+Mississippi,MS,37.42,1984,South
+Missouri,MO,39.98,1984,Midwest
+Montana,MT,38.18,1984,West
+Nebraska,NE,28.81,1984,Midwest
+Nevada,NV,31.97,1984,West
+New Hampshire,NH,30.94,1984,Northeast
+New Jersey,NJ,39.2,1984,Northeast
+New Mexico,NM,39.23,1984,West
+New York,NY,45.83,1984,Northeast
+North Carolina,NC,37.89,1984,South
+North Dakota,ND,33.8,1984,Midwest
+Ohio,OH,40.14,1984,Midwest
+Oklahoma,OK,30.67,1984,South
+Oregon,OR,43.74,1984,West
+Pennsylvania,PA,45.99,1984,Northeast
+Rhode Island,RI,48.02,1984,Northeast
+South Carolina,SC,35.57,1984,South
+South Dakota,SD,36.53,1984,Midwest
+Tennessee,TN,41.57,1984,South
+Texas,TX,36.11,1984,South
+Utah,UT,24.68,1984,West
+Vermont,VT,40.81,1984,Northeast
+Virginia,VA,37.09,1984,South
+Washington,WA,42.86,1984,West
+West Virginia,WV,44.6,1984,South
+Wisconsin,WI,45.02,1984,Midwest
+Wyoming,WY,28.24,1984,West
+Alabama,AL,39.86,1988,South
+Alaska,AK,36.27,1988,West
+Arizona,AZ,38.74,1988,West
+Arkansas,AR,42.19,1988,South
+California,CA,47.56,1988,West
+Colorado,CO,45.28,1988,West
+Connecticut,CT,46.87,1988,Northeast
+Delaware,DE,43.48,1988,South
+DC,DC,82.65,1988,South
+Florida,FL,38.51,1988,South
+Georgia,GA,39.5,1988,South
+Hawaii,HI,54.27,1988,West
+Idaho,ID,36.01,1988,West
+Illinois,IL,48.6,1988,Midwest
+Indiana,IN,39.69,1988,Midwest
+Iowa,IA,54.71,1988,Midwest
+Kansas,KS,42.56,1988,Midwest
+Kentucky,KY,43.88,1988,South
+Louisiana,LA,44.06,1988,South
+Maine,ME,43.88,1988,Northeast
+Maryland,MD,48.2,1988,South
+Massachusetts,MA,53.23,1988,Northeast
+Michigan,MI,45.67,1988,Midwest
+Minnesota,MN,52.91,1988,Midwest
+Mississippi,MS,39.07,1988,South
+Missouri,MO,47.84,1988,Midwest
+Montana,MT,46.2,1988,West
+Nebraska,NE,39.2,1988,Midwest
+Nevada,NV,37.92,1988,West
+New Hampshire,NH,36.29,1988,Northeast
+New Jersey,NJ,42.6,1988,Northeast
+New Mexico,NM,46.9,1988,West
+New York,NY,51.62,1988,Northeast
+North Carolina,NC,41.71,1988,South
+North Dakota,ND,42.97,1988,Midwest
+Ohio,OH,44.15,1988,Midwest
+Oklahoma,OK,41.28,1988,South
+Oregon,OR,51.28,1988,West
+Pennsylvania,PA,48.39,1988,Northeast
+Rhode Island,RI,55.64,1988,Northeast
+South Carolina,SC,37.58,1988,South
+South Dakota,SD,46.51,1988,Midwest
+Tennessee,TN,41.55,1988,South
+Texas,TX,43.35,1988,South
+Utah,UT,32.05,1988,West
+Vermont,VT,47.58,1988,Northeast
+Virginia,VA,39.23,1988,South
+Washington,WA,50.05,1988,West
+West Virginia,WV,52.2,1988,South
+Wisconsin,WI,51.41,1988,Midwest
+Wyoming,WY,38.01,1988,West
+Alabama,AL,40.88,1992,South
+Alaska,AK,30.29,1992,West
+Arizona,AZ,36.52,1992,West
+Arkansas,AR,53.21,1992,South
+California,CA,46.01,1992,West
+Colorado,CO,40.13,1992,West
+Connecticut,CT,42.21,1992,Northeast
+Delaware,DE,43.51,1992,South
+DC,DC,84.64,1992,South
+Florida,FL,39,1992,South
+Georgia,GA,43.47,1992,South
+Hawaii,HI,48.09,1992,West
+Idaho,ID,28.42,1992,West
+Illinois,IL,48.58,1992,Midwest
+Indiana,IN,36.79,1992,Midwest
+Iowa,IA,43.29,1992,Midwest
+Kansas,KS,33.74,1992,Midwest
+Kentucky,KY,44.55,1992,South
+Louisiana,LA,45.58,1992,South
+Maine,ME,38.77,1992,Northeast
+Maryland,MD,49.8,1992,South
+Massachusetts,MA,47.54,1992,Northeast
+Michigan,MI,43.77,1992,Midwest
+Minnesota,MN,43.48,1992,Midwest
+Mississippi,MS,40.77,1992,South
+Missouri,MO,44.07,1992,Midwest
+Montana,MT,37.63,1992,West
+Nebraska,NE,29.4,1992,Midwest
+Nevada,NV,37.36,1992,West
+New Hampshire,NH,38.86,1992,Northeast
+New Jersey,NJ,42.95,1992,Northeast
+New Mexico,NM,45.9,1992,West
+New York,NY,49.73,1992,Northeast
+North Carolina,NC,42.65,1992,South
+North Dakota,ND,32.18,1992,Midwest
+Ohio,OH,40.18,1992,Midwest
+Oklahoma,OK,34.02,1992,South
+Oregon,OR,42.48,1992,West
+Pennsylvania,PA,45.15,1992,Northeast
+Rhode Island,RI,47.04,1992,Northeast
+South Carolina,SC,39.88,1992,South
+South Dakota,SD,37.14,1992,Midwest
+Tennessee,TN,47.08,1992,South
+Texas,TX,37.08,1992,South
+Utah,UT,24.65,1992,West
+Vermont,VT,46.11,1992,Northeast
+Virginia,VA,40.59,1992,South
+Washington,WA,43.4,1992,West
+West Virginia,WV,48.41,1992,South
+Wisconsin,WI,41.13,1992,Midwest
+Wyoming,WY,33.98,1992,West
+Alabama,AL,43.16,1996,South
+Alaska,AK,33.27,1996,West
+Arizona,AZ,46.52,1996,West
+Arkansas,AR,53.74,1996,South
+California,CA,51.1,1996,West
+Colorado,CO,44.43,1996,West
+Connecticut,CT,52.83,1996,Northeast
+Delaware,DE,51.82,1996,South
+DC,DC,85.19,1996,South
+Florida,FL,48.02,1996,South
+Georgia,GA,45.84,1996,South
+Hawaii,HI,56.93,1996,West
+Idaho,ID,33.65,1996,West
+Illinois,IL,54.32,1996,Midwest
+Indiana,IN,41.55,1996,Midwest
+Iowa,IA,50.26,1996,Midwest
+Kansas,KS,36.08,1996,Midwest
+Kentucky,KY,45.84,1996,South
+Louisiana,LA,52.01,1996,South
+Maine,ME,51.62,1996,Northeast
+Maryland,MD,54.25,1996,South
+Massachusetts,MA,61.47,1996,Northeast
+Michigan,MI,51.69,1996,Midwest
+Minnesota,MN,51.1,1996,Midwest
+Mississippi,MS,44.08,1996,South
+Missouri,MO,47.54,1996,Midwest
+Montana,MT,41.23,1996,West
+Nebraska,NE,34.95,1996,Midwest
+Nevada,NV,43.93,1996,West
+New Hampshire,NH,49.32,1996,Northeast
+New Jersey,NJ,53.72,1996,Northeast
+New Mexico,NM,49.18,1996,West
+New York,NY,59.47,1996,Northeast
+North Carolina,NC,44.04,1996,South
+North Dakota,ND,40.13,1996,Midwest
+Ohio,OH,47.38,1996,Midwest
+Oklahoma,OK,40.45,1996,South
+Oregon,OR,47.15,1996,West
+Pennsylvania,PA,49.17,1996,Northeast
+Rhode Island,RI,59.71,1996,Northeast
+South Carolina,SC,43.96,1996,South
+South Dakota,SD,43.03,1996,Midwest
+Tennessee,TN,48,1996,South
+Texas,TX,43.83,1996,South
+Utah,UT,33.3,1996,West
+Vermont,VT,53.35,1996,Northeast
+Virginia,VA,45.15,1996,South
+Washington,WA,49.84,1996,West
+West Virginia,WV,51.51,1996,South
+Wisconsin,WI,48.81,1996,Midwest
+Wyoming,WY,36.84,1996,West
+Alabama,AL,41.59,2000,South
+Alaska,AK,27.67,2000,West
+Arizona,AZ,44.67,2000,West
+Arkansas,AR,45.86,2000,South
+California,CA,53.45,2000,West
+Colorado,CO,42.39,2000,West
+Connecticut,CT,55.91,2000,Northeast
+Delaware,DE,54.96,2000,South
+DC,DC,85.16,2000,South
+Florida,FL,48.84,2000,South
+Georgia,GA,42.98,2000,South
+Hawaii,HI,55.79,2000,West
+Idaho,ID,27.64,2000,West
+Illinois,IL,54.6,2000,Midwest
+Indiana,IN,41.01,2000,Midwest
+Iowa,IA,48.54,2000,Midwest
+Kansas,KS,37.24,2000,Midwest
+Kentucky,KY,41.37,2000,South
+Louisiana,LA,44.88,2000,South
+Maine,ME,49.09,2000,Northeast
+Maryland,MD,56.57,2000,South
+Massachusetts,MA,59.8,2000,Northeast
+Michigan,MI,51.28,2000,Midwest
+Minnesota,MN,47.91,2000,Midwest
+Mississippi,MS,40.7,2000,South
+Missouri,MO,47.08,2000,Midwest
+Montana,MT,33.36,2000,West
+Nebraska,NE,33.25,2000,Midwest
+Nevada,NV,45.98,2000,West
+New Hampshire,NH,46.8,2000,Northeast
+New Jersey,NJ,56.13,2000,Northeast
+New Mexico,NM,47.91,2000,West
+New York,NY,60.21,2000,Northeast
+North Carolina,NC,43.2,2000,South
+North Dakota,ND,33.05,2000,Midwest
+Ohio,OH,46.46,2000,Midwest
+Oklahoma,OK,38.43,2000,South
+Oregon,OR,46.96,2000,West
+Pennsylvania,PA,50.6,2000,Northeast
+Rhode Island,RI,60.99,2000,Northeast
+South Carolina,SC,40.91,2000,South
+South Dakota,SD,37.56,2000,Midwest
+Tennessee,TN,47.28,2000,South
+Texas,TX,37.98,2000,South
+Utah,UT,26.34,2000,West
+Vermont,VT,50.63,2000,Northeast
+Virginia,VA,44.44,2000,South
+Washington,WA,50.13,2000,West
+West Virginia,WV,45.59,2000,South
+Wisconsin,WI,47.83,2000,Midwest
+Wyoming,WY,27.7,2000,West
+Alabama,AL,36.84,2004,South
+Alaska,AK,35.52,2004,West
+Arizona,AZ,44.4,2004,West
+Arkansas,AR,44.55,2004,South
+California,CA,54.31,2004,West
+Colorado,CO,47.02,2004,West
+Connecticut,CT,54.31,2004,Northeast
+Delaware,DE,53.35,2004,South
+DC,DC,89.18,2004,South
+Florida,FL,47.09,2004,South
+Georgia,GA,41.37,2004,South
+Hawaii,HI,54.01,2004,West
+Idaho,ID,30.26,2004,West
+Illinois,IL,54.82,2004,Midwest
+Indiana,IN,39.26,2004,Midwest
+Iowa,IA,49.23,2004,Midwest
+Kansas,KS,36.62,2004,Midwest
+Kentucky,KY,39.69,2004,South
+Louisiana,LA,42.22,2004,South
+Maine,ME,53.57,2004,Northeast
+Maryland,MD,55.91,2004,South
+Massachusetts,MA,61.94,2004,Northeast
+Michigan,MI,51.23,2004,Midwest
+Minnesota,MN,51.09,2004,Midwest
+Mississippi,MS,39.75,2004,South
+Missouri,MO,46.1,2004,Midwest
+Montana,MT,38.56,2004,West
+Nebraska,NE,32.68,2004,Midwest
+Nevada,NV,47.88,2004,West
+New Hampshire,NH,50.24,2004,Northeast
+New Jersey,NJ,52.92,2004,Northeast
+New Mexico,NM,49.05,2004,West
+New York,NY,58.37,2004,Northeast
+North Carolina,NC,43.58,2004,South
+North Dakota,ND,35.5,2004,Midwest
+Ohio,OH,48.71,2004,Midwest
+Oklahoma,OK,34.43,2004,South
+Oregon,OR,51.35,2004,West
+Pennsylvania,PA,50.92,2004,Northeast
+Rhode Island,RI,59.42,2004,Northeast
+South Carolina,SC,40.9,2004,South
+South Dakota,SD,38.44,2004,Midwest
+Tennessee,TN,42.53,2004,South
+Texas,TX,38.22,2004,South
+Utah,UT,26,2004,West
+Vermont,VT,58.94,2004,Northeast
+Virginia,VA,45.48,2004,South
+Washington,WA,52.82,2004,West
+West Virginia,WV,43.2,2004,South
+Wisconsin,WI,49.7,2004,Midwest
+Wyoming,WY,29.07,2004,West
+Alabama,AL,38.74,2008,South
+Alaska,AK,37.89,2008,West
+Arizona,AZ,44.91,2008,West
+Arkansas,AR,38.86,2008,South
+California,CA,60.94,2008,West
+Colorado,CO,53.66,2008,West
+Connecticut,CT,60.59,2008,Northeast
+Delaware,DE,61.91,2008,South
+DC,DC,92.46,2008,South
+Florida,FL,50.91,2008,South
+Georgia,GA,46.9,2008,South
+Hawaii,HI,71.85,2008,West
+Idaho,ID,35.91,2008,West
+Illinois,IL,61.85,2008,Midwest
+Indiana,IN,49.86,2008,Midwest
+Iowa,IA,53.93,2008,Midwest
+Kansas,KS,41.57,2008,Midwest
+Kentucky,KY,41.15,2008,South
+Louisiana,LA,39.93,2008,South
+Maine,ME,57.71,2008,Northeast
+Maryland,MD,61.92,2008,South
+Massachusetts,MA,61.8,2008,Northeast
+Michigan,MI,57.33,2008,Midwest
+Minnesota,MN,54.06,2008,Midwest
+Mississippi,MS,43,2008,South
+Missouri,MO,49.23,2008,Midwest
+Montana,MT,47.11,2008,West
+Nebraska,NE,41.6,2008,Midwest
+Nevada,NV,55.15,2008,West
+New Hampshire,NH,54.13,2008,Northeast
+New Jersey,NJ,57.14,2008,Northeast
+New Mexico,NM,56.91,2008,West
+New York,NY,62.88,2008,Northeast
+North Carolina,NC,49.7,2008,South
+North Dakota,ND,44.5,2008,Midwest
+Ohio,OH,51.38,2008,Midwest
+Oklahoma,OK,34.35,2008,South
+Oregon,OR,56.75,2008,West
+Pennsylvania,PA,54.47,2008,Northeast
+Rhode Island,RI,62.86,2008,Northeast
+South Carolina,SC,44.9,2008,South
+South Dakota,SD,44.75,2008,Midwest
+Tennessee,TN,41.79,2008,South
+Texas,TX,43.63,2008,South
+Utah,UT,34.22,2008,West
+Vermont,VT,67.46,2008,Northeast
+Virginia,VA,52.63,2008,South
+Washington,WA,57.34,2008,West
+West Virginia,WV,42.51,2008,South
+Wisconsin,WI,56.22,2008,Midwest
+Wyoming,WY,32.54,2008,West
+Alabama,AL,38.36,2012,South
+Alaska,AK,40.81,2012,West
+Arizona,AZ,44.45,2012,West
+Arkansas,AR,36.88,2012,South
+California,CA,60.19,2012,West
+Colorado,CO,51.45,2012,West
+Connecticut,CT,58.06,2012,Northeast
+DC,DC,90.91,2012,South
+Delaware,DE,58.61,2012,South
+Florida,FL,49.91,2012,South
+Georgia,GA,45.43,2012,South
+Hawaii,HI,70.55,2012,West
+Idaho,ID,32.4,2012,West
+Illinois,IL,57.55,2012,Midwest
+Indiana,IN,43.85,2012,Midwest
+Iowa,IA,51.99,2012,Midwest
+Kansas,KS,37.99,2012,Midwest
+Kentucky,KY,37.8,2012,South
+Louisiana,LA,40.58,2012,South
+Maine,ME,56.27,2012,Northeast
+Maryland,MD,61.97,2012,South
+Massachusetts,MA,60.65,2012,Northeast
+Michigan,MI,54.09,2012,Midwest
+Minnesota,MN,52.65,2012,Midwest
+Mississippi,MS,43.79,2012,South
+Missouri,MO,44.38,2012,Midwest
+Montana,MT,41.66,2012,West
+Nebraska,NE,38.03,2012,Midwest
+Nevada,NV,52.36,2012,West
+New Hampshire,NH,51.98,2012,Northeast
+New Jersey,NJ,58.25,2012,Northeast
+New Mexico,NM,52.99,2012,West
+New York,NY,63.33,2012,Northeast
+North Carolina,NC,48.35,2012,South
+North Dakota,ND,38.7,2012,Midwest
+Ohio,OH,50.58,2012,Midwest
+Oklahoma,OK,33.23,2012,South
+Oregon,OR,54.24,2012,West
+Pennsylvania,PA,51.96,2012,Northeast
+Rhode Island,RI,62.7,2012,Northeast
+South Carolina,SC,44.09,2012,South
+South Dakota,SD,39.87,2012,Midwest
+Tennessee,TN,39.04,2012,South
+Texas,TX,41.37,2012,South
+Utah,UT,24.67,2012,West
+Vermont,VT,66.57,2012,Northeast
+Virginia,VA,51.16,2012,South
+Washington,WA,55.81,2012,West
+West Virginia,WV,35.53,2012,South
+Wisconsin,WI,52.83,2012,Midwest
+Wyoming,WY,27.82,2012,West
+Alabama,AL,34.36,2016,South
+Alaska,AK,36.55,2016,West
+Arizona,AZ,44.58,2016,West
+Arkansas,AR,33.65,2016,South
+California,CA,61.48,2016,West
+Colorado,CO,48.16,2016,West
+Connecticut,CT,54.57,2016,Northeast
+Delaware,DE,53.09,2016,South
+DC,DC,90.86,2016,South
+Florida,FL,47.41,2016,South
+Georgia,GA,45.35,2016,South
+Hawaii,HI,62.22,2016,West
+Idaho,ID,27.48,2016,West
+Illinois,IL,55.24,2016,Midwest
+Indiana,IN,37.46,2016,Midwest
+Iowa,IA,41.74,2016,Midwest
+Kansas,KS,35.74,2016,Midwest
+Kentucky,KY,32.68,2016,South
+Louisiana,LA,38.45,2016,South
+Maine,ME,47.83,2016,Northeast
+Maryland,MD,60.33,2016,South
+Massachusetts,MA,60.01,2016,Northeast
+Michigan,MI,47.03,2016,Midwest
+Minnesota,MN,46.44,2016,Midwest
+Mississippi,MS,40.06,2016,South
+Missouri,MO,37.87,2016,Midwest
+Montana,MT,35.41,2016,West
+Nebraska,NE,33.7,2016,Midwest
+Nevada,NV,47.92,2016,West
+New Hampshire,NH,46.83,2016,Northeast
+New Jersey,NJ,54.99,2016,Northeast
+New Mexico,NM,48.26,2016,West
+New York,NY,59,2016,Northeast
+North Carolina,NC,46.17,2016,South
+North Dakota,ND,27.23,2016,Midwest
+Ohio,OH,43.24,2016,Midwest
+Oklahoma,OK,28.93,2016,South
+Oregon,OR,50.07,2016,West
+Pennsylvania,PA,47.46,2016,Northeast
+Rhode Island,RI,54.41,2016,Northeast
+South Carolina,SC,40.67,2016,South
+South Dakota,SD,31.74,2016,Midwest
+Tennessee,TN,34.72,2016,South
+Texas,TX,43.12,2016,South
+Utah,UT,27.17,2016,West
+Vermont,VT,56.68,2016,Northeast
+Virginia,VA,49.75,2016,South
+Washington,WA,52.54,2016,West
+West Virginia,WV,26.18,2016,South
+Wisconsin,WI,46.45,2016,Midwest

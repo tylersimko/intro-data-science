@@ -1,0 +1,26 @@
+---
+title: "Lesson 6: First part"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Complete review
+
+Pivots
+
+Patchwork
+
+## other ideas
+
+correlation vs. causation

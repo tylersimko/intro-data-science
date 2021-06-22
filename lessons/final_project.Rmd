@@ -1,0 +1,84 @@
+---
+title: "Final Project Instructions"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+The goal of data science is to gain knowledge and insights from data. The ultimate goal of the course is to prepare you to use the tools of data science to conduct an independent analysis of your own.
+
+This is your opportunity to apply everything we'll learn about in the class to a topic that you personally care about.[^1]
+
+[^1]: Document based in part on Harvard courses like [Gov 51: Data Analysis and Politics](http://gov51.mattblackwell.org/assignments/final-project/). 
+
+## Schedule
+
+The final project will be a series of small assignments. Because this is a shortened summer course, we will do much of this in class and there will be no other homework. However, that also means it is especially important to stay on schedule for the final project. 
+
+1. 7/8: *In-class* - introduce project, start thinking about research question.
+2. 7/12: **Due: Draft of research question**. *In-class* - discussion and review.
+3. 7/13: *In-class* - search for datasets.
+4. 7/15: **Due: Research question and data source**.
+5. 7/19: *In-class* - Read in dataset to R, start manipulation.
+6. 7/20: *In-class* - More data manipulation, work on plots.
+7. 7/22: **Due: at least one plot from your analysis.**
+8. 7/26: *In-class* - work on final project.
+9. 7/27: *In-class* - work on final project.
+10. 7/29: **Due: final written report**.
+
+## Step 1: Question
+
+The core of your project is a **research question** - it is the question that you hope to answer. Of course, large and important questions cannot always be answered in a single project, but you can still make an argument and contribute evidence.
+
+Generally, a good research question will want to explore **systematic relationships between variables**. Often, you will make a hypothesis about the relationship between an **explanatory variable** and a **dependent variable**. 
+
+- **explanatory variable**: a variable that, according to your hypothesis, helps to explain your outcome. Often also called an *independent variable*.
+- **dependent variable**: your outcome.
+
+### Examples
+
+Here are a few real examples of research questions that my students in the past have answered. Most of these are related to government and politics in some way because these are the courses I teach, but you should feel free to explore any kind of question you want:
+
+- How do **international standards for sex education** (EV) relate to **health outcomes for women and girls** (DV)?
+- Does **NFL team success** (EV) explain **ticket prices** (DV)?
+- How have **patterns of language** (DV) changed **over the past 30 years** (EV) in modern song lyrics?
+- Do **campaign expenditures** (EV) meaningfully influence **Senate elections** (DV)?
+- How have **crime rates and patterns** (DV) changed over **time** (EV) in New York City?
+- Does **economic inequality** (EV) increase patterns of **terrorism** (DV)?
+
+Your research question must include:
+
+1. **Explanatory variable**: describe what it is, how it is measured. According to your theory, this is related to your outcome in some way.
+2. **Dependent variable**: your outcome and how it is measured.
+3. **Hypothesis**: a plausible theory about how your explanatory variable relates to your dependent variable. For example, an NFL team's success on the field (EV) may bring them more fans and make it more attractive to attend their games. This could lead to increased ticket prices.
+
+## Step 2: Data Source
+
+Once you have some idea of the topic you would like to answer, you should start looking for a data source. Here are some places to start that have been useful for my students in the past. **Don't limit yourself** to these sources alone - be bold with your research question, and come talk to me if you can't find a suitable dataset. We'll find (or make) one!
+
+- [Google Dataset Search](https://datasetsearch.research.google.com/): easy way to filter Google Search results to datasets only.
+- [DataIsPlural](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0): huge collection of datasets on many different topics - good for inspiration.
+- Collection of data sources on [global climate](https://github.com/KKulma/climate-change-data#open-data).
+- Long list of [government & politics datasets](https://github.com/erikgahner/PolData):
+- [FiveThirtyEight](https://data.fivethirtyeight.com/) - their predictions and datasets. 
+
+## Step 3: Analyses
+
+Once you have your research question and dataset, you will start conducting your analyses. Most of you will have to do some **data cleaning** first. Since RMarkdown files can hold code, text, and plots, all of your work will be done here so it is easily reproducible.
+
+## Step 4: Final Report
+
+Your final report will have the following sections:
+
+1. **Introduction**: introduce your research question and hypotheses. Discuss your research question in terms of your explanatory variable and dependent variable. Why does this matter for the real world?
+2. **Data**: discuss your data source and how you acquired it (and cite your source). Discuss how your explanatory and dependent variables are measured and presented in your dataset. **Design at least one table or plot** that describes your data.
+3. **Results**: analyze your research question. This section should explore the relationship between your explanatory and dependent variables. Discuss what you find.
+4. **Conclusion**: This section should (1) summarize your results, (2) discuss whether you find any support for your hypothesis, (3) critically analyze the potential limitations of your analysis, and (4) discuss a potential plan for future improvement.
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

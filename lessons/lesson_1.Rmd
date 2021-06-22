@@ -1,0 +1,274 @@
+---
+title: "Lesson 1: First Steps"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Data
+
+Throughout this entire course, you will use code to do things with **data**. R can deal with many types of data, like **numbers** (3, 0, 2021), letters and words called **characters** ("Data", "South Amboy", "Tyler"), and many many others. For example, go to your console (the panel called "Console" with the `>` character at the bottom) and type:
+
+```{r}
+3
+```
+
+That was code! R knows that 3 is a number, and it simply reported it back to you. The `[1]` means that one value was reported back to you.
+
+You can also type letters and words as long as they are between two quotes `"like this"`. In the console, type something like: 
+
+```{r}
+"This is a sentence!"
+```
+
+R is also very good at math. Try typing:
+
+```{r}
+3 + 10
+```
+
+Amazing! R can also do subtraction, multiplication, and division like you're familiar with:
+
+```{r}
+3 - 10
+3 * 10
+3 / 10
+-3 + 4
+```
+
+R can also use **Boolean** values, which are `TRUE` or `FALSE` depending on how a statement is evaluated. For example, `==` (two equal signs) will tell you whether or not the value on the left is equal to the value on the right.
+
+```{r}
+3 == 3
+3 == 7
+```
+
+`!=` can be used to see if one value is **not equal** to something else. For example:
+
+```{r}
+3 != 4
+3 == 4
+```
+
+## Exercises
+
+1. Try evaluating a few mathematical expressions in the box below. In an RMarkdown file, you can evaluate the code by clicking on the green arrow (or CMD + Enter on a Mac / Ctrl + Enter on PC):
+
+```{r}
+
+```
+
+2. Write something in quotes below and run the code:
+
+```{r}
+
+```
+
+---
+
+# 2. Objects
+
+Sometimes, you want to store data for later. An **object** in R will store data for you. For example, imagine you want to keep the value of a complicated calculation:
+
+```{r}
+36 * 1527
+```
+
+Instead of trying to remember that number, you can store that data in an **object**. Then, the data will be there whenever you want it. In R, we make objects with the `<-` operator. Think of `<-` like an arrow, it stores the **data on the right** in the **name on the left**. In general, you can give objects any name you want. For example:
+
+```{r}
+number <- 36 * 1527
+```
+
+Wait, nothing happened? This is because your answer is now stored in an object called `number.` Type `number` in the console and your answer will come back!
+
+```{r}
+number
+```
+
+## Exercises
+
+1. Create an object named `year` with the value 2021.
+
+```{r}
+
+```
+
+2. Create an object named `answer` with the value 15. Then, divide `answer` by 3. 
+
+```{r}
+
+```
+
+3. Use `==` to see whether `answer` is equal to 12. 
+
+```{r}
+
+```
+
+---
+
+# 3. Functions
+
+Some operations are a little more complex than simple math like addition. A **function** is a pre-written piece of code that somebody else wrote for you to perform a specific task. For example, there will be functions for things like making plots. We will use many functions in this course. We will even learn how to write our own functions!
+
+For example, how would you find the square root of a number? Well, thankfully there is a function called `sqrt()`. To run it, you should type `sqrt()` into the console and put the number that you want to find the square root of between the parentheses:
+
+```{r}
+sqrt(9)
+```
+
+This is how all functions will work:
+
+- Type the name of the function. Here, it is `sqrt()`. 
+- Include the value you want to evaluate inside the parentheses (`sqrt(9)`). The value you give to the function (`9`) is called an **argument**. 
+
+Functions can take **objects** as their argument as well. Remember our object `number`? Check it out!
+
+```{r}
+sqrt(number)
+```
+
+You can store the output of a function into an object as well. For example:
+
+```{r}
+answer <- sqrt(number)
+```
+
+To see the result, just type in the name of your object:
+
+```{r}
+answer
+```
+
+You can also perform math on objects just like we did earlier. Look, multiplying the square root times itself should get us back the original number:
+
+```{r}
+answer * answer
+```
+
+Is this the same as `number`?
+
+```{r}
+number
+```
+
+It worked!
+
+To learn how a function works, you can type `?` followed by the name of the function (e.g. `?sqrt`) in the console and press enter to open the **documentation**.
+
+- **Usage** shows you how to use the function.
+- **Arguments** tells you what arguments you pass the function.
+- **Details** tells you a little bit about the function.
+- **Value** will tell you what the function returns, if anything.
+- **Examples** are very useful, they show you examples of working code.
+
+```{r}
+?sqrt
+```
+
+## Exercises
+
+1. Create an object called `number` with the value 1444. What is the square root of `number`?
+
+```{r}
+
+```
+
+2. Create an object called `name` with your name. Now, go in the console and type `?abs` to open the documentation for the `abs()` function. Come up with an example that shows what it does. 
+
+```{r}
+
+```
+
+# 4. Objects with Multiple Values
+
+Objects can also store more than one value at once. **Vectors** are one very common way to store data. To create a vector, we use the function `c()` (the "c" stands for combine, because it combines multiple values separated by a comma). Just like before, you can use the `<-` syntax to create an object.
+
+```{r}
+grades <- c(100, 95, 85)
+names  <- c("Emma", "Bonnie", "Connor")
+```
+
+Some functions take **vectors** as arguments because they are meant to work with multiple values. For example, the `mean()` function will find the average of the values in a vector:
+
+```{r}
+mean(grades)
+```
+
+We've already learned a lot of terminology. Above, we used a **vector** called `grades` as an **argument** in a **function** called `mean()`. 
+
+## Exercises
+
+1. Create a vector called `prices` with the values 12, 11, and 8. Find the average price.
+
+```{r}
+
+```
+
+2. What happens if you run `prices + 1`? What is this doing?
+
+```{r}
+
+```
+
+3. The function `sum()` will add all the values in a vector. Run `?sum` to learn how it works. Find the total sum of the `prices` object.
+
+```{r}
+
+```
+
+# 5. Comments
+
+Programming is difficult and code can be hard to understand. To make your life easier, **you should always comment your code**. This helps you and others to understand what's going on. Comments also make it much easier to return to some code later and understand what it's doing.
+
+You can write comments with the `#` sign followed by normal text. This will look like code but it will not be evaluated as code:
+
+```{r}
+# I found these prices online at Amazon.com
+prices <- c(400, 938, 121)
+```
+
+# Exercises
+
+The `seq()` function will make a sequence of numbers for you. For example:
+
+```{r}
+seq(from = 1, to = 5, by = 1)
+seq(from = 0, to = 100, by = 10)
+
+# you can leave out the argument names if you want
+seq(1, 5, 1)
+# or keep only some, as long as they are in the correct order
+seq(1, 5, by = 1)
+```
+
+1. Create a vector named `values` containing numbers from 0 to 1000 in increments of 5. Write a comment explaining your code.
+
+```{r}
+
+```
+
+2. Find the sum of every number in `values`.
+
+```{r}
+
+```
+
+3. Find the square root of **each** number in `values`. Write a comment describing why this returned many numbers while Question 2 only had one number.
+
+```{r}
+
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

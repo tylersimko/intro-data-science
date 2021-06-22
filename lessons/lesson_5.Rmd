@@ -1,0 +1,301 @@
+---
+title: "Lesson 5: Mapping and Merging Data"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Maps
+
+So far, we have worked with relatively simple data types - numbers (`340`) and characters (`"Data Science"`). However, R knows how to work with many different types of data.
+
+Today, we'll work with maps. Download the `world.rds` object at [this link](https://drive.google.com/drive/folders/1Y6PLcags5dEKDM7Oo9TpCtm3hFWCNeci?usp=sharing) and place it in your `data` folder. This is an R-Dataset file (RDS) - basically, an object that I created for you in R and saved for you (and others!) to read back in.[^1]
+
+[^1]: This object is from the `maptools` package: https://github.com/nasa/World-Wind-Java/tree/master/WorldWind/testData/shapefiles
+
+We will use the `sf` package to make maps. If you are on RStudio Cloud, it has already been installed for you. If you are on your own computer, run `install.packages("sf")`. This may take a minute - let me know if you have any issues.
+
+Let's read the file into an object named `world` - you'll see why soon!
+
+```{r}
+library(tidyverse)
+library(sf)
+
+world <- readRDS("data/world.rds")
+```
+
+If we look at the object, we'll see a lot of familiar data types:
+
+```{r}
+world
+```
+
+However, look at the header ("Geometry type", "Dimension", "Bounding Box", etc.) and the **geometry** column. This tells you that the file also contains a *geometric* object. There are other common sources for these geometric objects as well, like **shapefiles** (files with a .shp extension).
+
+The **MULTIPOLYGON** part below tells you that the data contained is a geometric object. You can see some of the values (-61.68667, 1.....), which is what defines the shape on the map.
+
+However, you don't need to know how to read the underlying representation of the data. Thankfully, R knows how to read it for you! Amazingly, there are already built-in geoms to do the heavy lifting for you. This code should look very familiar:
+
+```{r}
+world %>% 
+  ggplot() + 
+  geom_sf()
+```
+
+All of the functions you already know work in the way you would expect:
+
+```{r}
+world %>% 
+  filter(NAME == "Australia") %>%
+  ggplot() + 
+  geom_sf(color = "darkred", fill = "darkblue") +
+  theme_bw()
+
+world %>% 
+  ggplot() + 
+  geom_sf(aes(fill = factor(REGION))) +
+  theme_bw()
+```
+
+You can even summarise! Instead of adding numbers, you can use functions to add, subtract, intersect, etc. the underlying map data. For example, `st_union()` is a function that overlaps several map objects:
+
+```{r}
+# the %in% object will return TRUE if a value is in the vector
+# FALSE otherwise
+# equivalent to NAME == "United States" | NAME == "Mexico" ...
+world %>%
+  filter(NAME %in% c("United States", "Mexico", "Canada")) %>%
+  summarise(geometry = st_union(geometry)) %>%
+  ggplot() + 
+    geom_sf()
+
+# this stretches really far
+# coord_sf() will set "limit" for x-axis
+world %>%
+  filter(NAME %in% c("United States", "Mexico", "Canada")) %>%
+  summarise(geometry = st_union(geometry)) %>%
+  ggplot() + 
+    geom_sf() +
+    coord_sf(xlim = c(-180, -40))
+```
+
+### Exercises
+
+1. Using the `world` data, design a nice visualization that shows the population of a few adjacent countries of your choice.
+
+```{r}
+
+```
+
+# 2. Merging
+
+So far, we have only ever worked with one dataset at a time. However, in many real-life situations (including on your final project), you will want to combine information **from different datasets**. 
+
+We will do this on the World Cup data, but let's start with a simple example. For example, imagine a datasets of students and grades:
+
+```{r}
+students <- tibble(name = c("Emma", "Josh", "Alice", "Olivia"),
+       class = c(2022, 2024, 2023, 2022))
+grades <- tibble(name = c("Josh", "Alice", "Tyler", "Emma"),
+       grade = c(94, 99, 74, 95))
+
+students
+grades
+```
+
+Imagine you want the student, class, and grade all in the same dataset. To do that, we need to combine the **students** and **grades** datasets.
+
+What do they have in common? Student names! In both datasets, the column is called `name`. There are several ways to join in R:
+
+- `full_join()`: keep **all rows from both datasets**, even if a row fails to match.
+- `left_join()`: keep all rows from **left** dataset, even if a row fails to match (`right_join()` also exists.)
+- `inner_join()`: keep **only the rows that are found in both datasets**.
+
+The differences are easiest to see visually. We use the `by` argument to 
+
+```{r}
+inner_join(students, grades, by = "name")
+full_join(students, grades, by = "name")
+left_join(students, grades, by = "name")
+right_join(students, grades, by = "name")
+```
+
+Imagine the student column name wasn't the same in both datasets. Then, you would have to use a **vector** in the `by` argument:
+
+```{r}
+grades <- grades %>%
+  rename(student_name = name)
+grades
+
+inner_join(students, grades, by = c("name" = "student_name"))
+```
+### Exercises
+
+1. Merges are tricky! Let's practice here. Merge the `countries` and `artists` datasets together in two ways. First, keep only the artists who's country capital is in `countries` (i.e. Canada and France should not be in your final answer):
+
+```{r}
+artists <- tibble(name = c("Lorde", "Taylor Swift", 
+                           "Drake", "BTS", "Harry Styles"),
+       country = c("New Zealand", "USA", "Canada",
+                   "South Korea", "England"))
+
+countries <- tibble(country = c("New Zealand", "USA", 
+                   "France", "South Korea", "England"),
+       capital = c("Wellington", "Washington DC", "Paris",
+                   "Seoul", "London"))
+
+artists
+countries
+
+inner_join(artists, countries, by = "country")
+```
+
+2. Now, merge `states` and `artists` so that all artists (but not countries) are kept in the resulting dataset even if they don't match.
+
+```{r}
+left_join(artists, countries, by = "country")
+```
+
+### Conditional edits - `ifelse()` and `case_when()`
+
+Here our goal is to combine data from the `world` object (which contains) geometric shapes with World Cup results from yesterday's dataset.[^2] Let's create a dataset of the number of World Cup wins per country.
+
+[^2]: This dataset comes from user `jokecamp` on [GitHub](https://github.com/jokecamp/FootballData).
+
+```{r}
+cups <- read_csv("data/world_cups.csv")
+
+# don't forget, this datset only goes up to 2006
+wc_wins <- cups %>%
+  group_by(team) %>%
+  summarise(wins = sum(wc_winner))
+```
+
+Sometimes you want to directly change values in your data. For example, this dataset only goes up to 2006. We can directly edit the values to update it to the present day. Since 2006, Spain (2010), Germany (2014), and France (2018) have won the World Cup. Let's update those values directly using `ifelse()`.
+
+`ifelse()` will let you change values directly. For example, right now the value for France in our `wc_wins` data is 1. We know it should be 2, so we could use `ifelse()` to change the value **only** if the country is France, and leave it alone otherwise. Sinec we are editing the values of a column, we can use `mutate()`:
+
+```{r}
+# IF the team name == France, make it 2
+# IF the team name does not equal France, leave it alone (= wins)
+wc_wins %>%
+  mutate(wins = ifelse(team == "France", 2, wins))
+```
+
+We can use multiple `ifelse()` statements if we want to change values for multiple countries:
+
+```{r}
+wc_wins <- wc_wins %>%
+  mutate(wins = ifelse(team == "France", 2, wins),
+         wins = ifelse(team == "Germany", 4, wins),
+         wins = ifelse(team == "Spain", 1, wins))
+```
+
+However, if you have many values like this it can be annoying to type. `case_when()` is a way of performing multiple if statements at once:
+
+```{r}
+wc_wins %>%
+  mutate(wins = case_when(team == "France" ~ 2, 
+                          team == "Germany" ~ 4,
+                          team == "Spain" ~ 1,
+                          TRUE ~ as.numeric(wins)))
+```
+
+### Exercises
+
+1. `ifelse()` is important, so let's practice it. With the `teachers` dataset I've created below, use `ifelse()` to recode the `school` variable such that `M` becomes "Middle School" and `H` becomes "High School" (HINT: there are only two values). Don't forget to save your object.
+
+```{r}
+teachers <- tibble(names = c("Mr. Bourgeau", 
+                             "Mrs. Nisraiyya", 
+                             "Mr. Gundrum"),
+                   school = c("H", "H", "M"),
+                   subject = c("ENG", "SCI", "MAT"))
+teachers
+
+teachers %>%
+  mutate(school = ifelse(school == "M", "Middle", "High"))
+```
+
+2. Next, use `case_when()` to recode the `subject` variable so the values "ENG", "SCI", and "MAT" are recoded to "English", "Science", and "Math." Those are the only three values, so you can skip the `TRUE ~ ...` line from before.
+
+```{r}
+teachers %>%
+  mutate(subject = case_when(subject == "ENG" ~ "English",
+                             subject == "SCI" ~ "Science",
+                             subject == "MAT" ~ "Math"))
+```
+
+# 3. Merging World Cup data
+
+Our goal is to add the `wc_winner` column onto the `world` dataset. Here are the datasets we want to merge - what do they have in common?
+
+```{r}
+world
+wc_wins
+```
+
+Both have country names! In `wc_wins`, the column is called `team` while in `world` it is called `NAME`, but they contain the same type of information - a country name. So here, we will **merge by country name**. This way, R can "link" the `world` and `wc_wins` datasets.
+
+```{r}
+world_join <- left_join(world, wc_wins, by = c("NAME" = "team"))
+
+world_join %>%
+  filter(REGION == 150 & NAME != "Russia") %>%
+  ggplot() + geom_sf(aes(fill = factor(wins)))
+```
+Here, what is the difference between NA and 0? NA (meaning "no value" or "empty") are countries in `world` that were not found in `wc_wins`. Why might this be? Well, these are countries that may have never been in the World Cup (Lithuania, Finland, etc.). However, we still have data on their geometries (even though the match failed) because we used `left_join()`.
+
+We can use `ifelse()` to fix them. Instead of == or != like normal, we will use `is.na()`, which is a function that returns `TRUE` is a value is NA and `FALSE `otherwise. Here, we want to turn all NAs into 0 and keep the values the same otherwise.
+
+```{r}
+# example
+values <- c(1, 2, 3, NA)
+is.na(values)
+
+world_join <- world_join %>%
+  mutate(wins = ifelse(is.na(wins), 0, wins)) 
+
+# filter down to Europe (150) for simplicity
+world_join %>%
+  filter(REGION == 150 & NAME != "Russia") %>%
+  ggplot() + geom_sf(aes(fill = factor(wins)))
+```
+
+But wait! How about England? They won a World Cup in 1966. Why didn't their merge work?
+
+```{r}
+library(ggthemes)
+europe <- world_join %>%
+  filter(REGION == 150 & NAME != "Russia") %>%
+  mutate(wins = ifelse(NAME == "United Kingdom", 1, wins)) %>%
+  ggplot() + geom_sf(aes(fill = factor(wins))) + 
+  theme_map()
+
+europe
+```
+
+### Exercises
+
+1. Using the code above and `world_join`, make a similar graph for North America (`REGION == 19`). To make the plot nicer, you may also want to remove `Greenland`. Try adding `theme_map()` from the `ggthemes` package (don't forget to load it).
+
+```{r}
+library(ggthemes)
+world_join %>%
+  filter(REGION == 19 & NAME != "Greenland") %>%
+  ggplot() + geom_sf(aes(fill = factor(wins))) + 
+  coord_sf(xlim = c(-180, -40)) + 
+  theme_map()
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

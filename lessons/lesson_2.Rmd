@@ -1,0 +1,185 @@
+---
+title: "Lesson 2: Datasets"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In Lesson 1, we learned about objects. Vectors are objects with multiple values. For example, you could have vectors that tell you the `population` and `year` for a particular area. Like this:
+
+```{r}
+pop <- c(100, 347, 500)
+year <- c(2019, 2020, 2021)
+```
+
+You can type the name of the object to see these values and also use functions on them just like before:
+
+```{r}
+pop
+year
+mean(pop)
+```
+
+However, what if you want information on population **and** year **in a single object**? This is what **datasets** are for. 
+
+# 1. Datasets
+
+A **dataset** will store multiple pieces of information for each **observation**. An **observation** can any individual thing you want to study - a country, a person, a book, etc. For example, let's use one of the datasets built into the `tidyverse()` package. Load the `tidyverse` package with `library(tidyverse)`. You will need to do this at the start of any script where you want to use `tidyverse`. 
+
+```{r, message = FALSE}
+library(tidyverse)
+```
+
+The `tidyverse` package comes with a built-in dataset called `population`. This *object* called `population` was automatically created when you ran `library(tidyverse)`. Go to the console in RStudio (the panel called "Console" with the `>` character at the bottom) and type `population`. It will print out a dataset that looks like this:
+
+```{r}
+population
+```
+
+Notice that this dataset has both *rows* and *columns*. `4060 x 3` tells you that there are 4060 rows (up to down) and 3 columns (left to right). We can see the first ten rows in the screenshot above. Each row in the dataset tells you about the `population` of a `country` in a particular `year`. So, the population of Afghanistan in 2003 was 23,116,142.
+
+In the console, type `View(population)` to look at your dataset. This will open up a new window where you can look at the values. It is a good idea to always look through your datasets:
+
+```{r, eval=FALSE}
+View(population)
+```
+
+You can do many things with datasets. Often, we will want to use functions on datasets. For example, the `slice()` function takes two arguments, an object and a number `n`, and the function will return to you the first `n` rows you asked for.
+
+For example, to get the first 5 rows of `population`, type:
+
+```{r}
+slice(population, 5)
+```
+# 2. The `%>%` Operator
+
+For various reasons, we will often want to chain multiple functions together. The `%>%` operator (called "pipe") makes this very easy. Remember the `tidyverse` library? This gives us access to the `%>%` operator.
+
+The `%>%` operator passes the object on the left **as the first argument** to the function on the right. For example, **both of these lines do the exact same thing**:
+
+```{r}
+slice(population, 5)
+
+population %>% slice(5)
+```
+You can use this operator anywhere we have used functions before, like:
+
+```{r}
+numbers <- c(3, 4, 5)
+numbers %>% mean()
+```
+
+## Exercises
+
+1. Write code to find the first 10 rows of `population`. 
+
+```{r}
+
+```
+
+2. Try to run `population + 1`. What happens? That's an error message - read it! Most importantly, why isn't this working? What is the message trying to tell you?
+
+# 3. Choosing particular rows: `filter()`
+
+You can use many functions to interact with datasets too. You will often want to work with only observations that meet a certain condition. For example, only countries in a particular year, or only people over the age of 45, or only Democratic political candidates. 
+
+`filter()` makes a smaller dataset by selecting rows that meet a certain criteria. The function `filter()` will return only the **rows** in a particular dataset that meet a certain condition. For example, the `population` dataset has many countries in it. What if you only want the values from France? You can use `filter()` to select observations that only have "France" as the value for `country`.
+
+```{r}
+population %>% filter(country == "France")
+```
+
+`filter()` will evaluate the condition in the parentheses to `TRUE` or `FALSE` for every single row in the dataset. The function will return only rows which evaluate to `TRUE`.
+
+To see why this works, imagine a vector like:
+
+```{r}
+countries <- c("France", "Bangladesh", "Burundi")
+countries == "France"
+```
+
+Using the `==` operator on a **vector** creates one `TRUE` or `FALSE` value **for each entry of the vector**. When you use it on a column in a dataset like in the `filter()` example above, it will return one `TRUE` or `FALSE` **for each row in the dataset.** Then, `filter()` only returns the rows with a `TRUE` value.
+
+## Exercise
+
+1. Use `filter()` to access the rows in `population` in the year 1999. 
+
+```{r}
+
+```
+
+2. Use `filter()` to access the rows in `population` with less than 5000 people. Assign the result to an object called `small_countries`. 
+
+```{r}
+
+```
+
+3. Use `filter()` to access the rows in `population` for every country **other** than Greece.
+
+```{r}
+
+```
+
+# 4. Creating new columns: `mutate()`
+
+The `mutate()` function is used to **make new columns** in your data. For example, if we wanted a new column in our dataset representing countries with at least a million people:
+
+```{r}
+population %>%
+  mutate(million = population > 1000000)
+```
+Or maybe a column that counts `population` in millions:
+
+```{r}
+population %>%
+  mutate(pop_thousand = population / 1000000)
+```
+
+# 5. Using your own datasets
+
+You can also download and use your own datasets. R can work with a ton of formats you may have seen in the past (.csv, .pdf, .xlsx, etc.). We will download a CSV from the internet and read it into R. [Here is a link to a Google Sheet that I made](https://docs.google.com/spreadsheets/d/1YWZZLCWROSSEziNtc2xfJnEJXcW32WRzaAp8L944KIo/edit#gid=0). This contains presidential election results for every state from 1932-2016.[^1]
+
+[^1]: This dataset comes from the `pscl` [R package](https://vincentarelbundock.github.io/Rdatasets/doc/pscl/presidentialElections.html).
+
+Download the spreadsheet to your computer with **File --> Download --> .csv**. Save the dataset **in the same folder where you stored this `lesson_2.Rmd` document**.
+
+Then, we are going to use the `read_csv()` function to read this dataset. We will store it in an object called `elections`. The argument to this function is the path to the file you want to read. Since you placed it in the same folder, the path is simply the name of the file. After typing the quotes, you can press the **tab** key on your keyboard to show your list of options. If you press tab again, R will autocomplete.
+
+```{r}
+# Data from class, link is above in the document
+elections <- read_csv("data/pres_elections.csv")
+```
+
+## Exercise
+
+1. Look at the dataset with `View()`. What do the rows and columns represent?
+
+2. Use `filter()` to only select results for New Jersey and store the answer in an object called `nj`. 
+
+```{r}
+
+```
+
+3. Use `filter()` to make an object called `south` that only contains results from states in the south:
+
+```{r}
+
+```
+
+4. Explain why this code below returns no rows (it may be helpful to look at the dataset with `View(elections)`:
+
+```{r}
+elections %>% filter(state == "NJ")
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
