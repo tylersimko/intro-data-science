@@ -81,7 +81,7 @@ numbers %>% mean()
 
 ## Exercises
 
-1. Write code to find the first 10 rows of `population`. 
+1. Write code to find the first 10 rows of `population`. Save it in an object called `first_ten`.
 
 ```{r}
 
@@ -145,6 +145,21 @@ population %>%
   mutate(pop_thousand = population / 1000000)
 ```
 
+## Exercise
+
+1. Filter `population` to the data for years since 2005. Save it to an object called `modern`.
+
+```{r}
+
+```
+
+2. Create a column in `population` called `is2000` that is `TRUE` if the year is 2000 and `FALSE` otherwise.
+
+```{r}
+
+```
+
+
 # 5. Using your own datasets
 
 You can also download and use your own datasets. R can work with a ton of formats you may have seen in the past (.csv, .pdf, .xlsx, etc.). We will download a CSV from the internet and read it into R. [Here is a link to a Google Sheet that I made](https://docs.google.com/spreadsheets/d/1YWZZLCWROSSEziNtc2xfJnEJXcW32WRzaAp8L944KIo/edit#gid=0). This contains presidential election results for every state from 1932-2016.[^1]
@@ -176,7 +191,13 @@ elections <- read_csv("data/pres_elections.csv")
 
 ```
 
-4. Explain why this code below returns no rows (it may be helpful to look at the dataset with `View(elections)`:
+4. Look up the function `nrow()` in the documentation. Figure out what it does, and then use it on both `nj` and `south`.
+
+```{r}
+
+```
+
+5. Explain why this code below returns no rows (it may be helpful to look at the dataset with `View(elections)`:
 
 ```{r}
 elections %>% filter(state == "NJ")

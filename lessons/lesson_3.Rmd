@@ -31,7 +31,6 @@ Let's look at the results for New Jersey:
 nj <- elections %>% filter(state == "New Jersey")
 ```
 
-
 As you might expect, there are many functions for plotting! The starting point for every plot we make in this course is called `ggplot()`. 
 
 Starting with a dataset, you can create a plot with `year` on the x-axis and `democrat` on the y-axis with:
@@ -80,6 +79,7 @@ nj %>%
 ### Exercises
 
 1. Okay, let's all try this. Create a new object with the election results from one state other than New Jersey. Use it to make a plot like we have above.
+
 ```{r}
 
 ```
