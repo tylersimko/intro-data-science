@@ -142,7 +142,7 @@ best_teams %>%
 
 ### Using groups for other statistics
 
-The sum is one interesting measurement you will want to calculate, but it is certainly not the only one. The **mean** (average) is another. Thankfully, calculating means for the complete sample or finding means within each group is very simple. All you need to do is change the function that you use in `summarise()`. .
+The sum is one interesting measurement you will want to calculate, but it is certainly not the only one. The **mean** (average) is another. Thankfully, calculating means for the complete sample or finding means within each group is very simple. All you need to do is change the function that you use in `summarise()`.
 
 ```{r}
 # find average goals scored by team in 1930
@@ -155,7 +155,7 @@ cups %>%
   filter(year == 1930) %>%
   summarise(scored = mean(scored / matches))
 
-# find average goals scored per match in every year
+# find average goals scored per team in every year
 cups %>%
   group_by(year) %>%
   summarise(scored = mean(scored))

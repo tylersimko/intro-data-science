@@ -140,7 +140,7 @@ region_religion %>%
 
 ### Scales
 
-So far, we have let `gplot()` decide many things about our plots automatically that you may not have noticed. For example, all of the Religious Proportion axis values (0.0, 0.1, 0.2, etc.) might look nicer as percentages (10%, 20%, etc.).
+So far, we have let `ggplot()` decide many things about our plots automatically that you may not have noticed. For example, all of the Religious Proportion axis values (0.0, 0.1, 0.2, etc.) might look nicer as percentages (10%, 20%, etc.).
 
 **Scales** control these visual characteristics of plots. Every aesthetic in your plot (`x`, `y`, variables like `fill` or `color` if you use them) is controlled by a scale. 
 
@@ -169,6 +169,10 @@ Using another column (`hbcu` or `women_only` might be most straightforward, but 
 Once it's done, we will combine this with your first plot to display both at once. If you are own your own computer, install the `patchwork` package with `install.packages("patchwork")` (if you are on RStudio Cloud, I have already installed it for you). Then run `library(patchwork)` to load it. 
 
 Save your first plot to an object, save your second plot to an object, and then try adding your plot objects together with `+` to see what happens!
+
+```{r}
+
+```
 
 # Question 3: Practice Mapping
 

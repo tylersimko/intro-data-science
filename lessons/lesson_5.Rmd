@@ -147,7 +147,8 @@ inner_join(students, grades, by = c("name" = "student_name"))
 artists <- tibble(name = c("Lorde", "Taylor Swift", 
                            "Drake", "BTS", "Harry Styles"),
        country = c("New Zealand", "USA", "Canada",
-                   "South Korea", "England"))
+                   "South Korea", "England"),
+       concerts = c(0, 74, 15, 61, 12))
 
 countries <- tibble(country = c("New Zealand", "USA", 
                    "France", "South Korea", "England"),
@@ -236,6 +237,12 @@ teachers %>%
                              subject == "MAT" ~ "Math"))
 ```
 
+3. Using the `wc_wins` object, create a new column called `winner` which equals "Yes" if the country has won a World Cup and "No" otherwise.
+
+```{r}
+
+```
+
 # 3. Merging World Cup data
 
 Our goal is to add the `wc_winner` column onto the `world` dataset. Here are the datasets we want to merge - what do they have in common?
@@ -254,6 +261,7 @@ world_join %>%
   filter(REGION == 150 & NAME != "Russia") %>%
   ggplot() + geom_sf(aes(fill = factor(wins)))
 ```
+
 Here, what is the difference between NA and 0? NA (meaning "no value" or "empty") are countries in `world` that were not found in `wc_wins`. Why might this be? Well, these are countries that may have never been in the World Cup (Lithuania, Finland, etc.). However, we still have data on their geometries (even though the match failed) because we used `left_join()`.
 
 We can use `ifelse()` to fix them. Instead of == or != like normal, we will use `is.na()`, which is a function that returns `TRUE` is a value is NA and `FALSE `otherwise. Here, we want to turn all NAs into 0 and keep the values the same otherwise.
