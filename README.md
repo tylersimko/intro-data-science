@@ -12,3 +12,5 @@ Lessons:
 4. [Summarizing Data](lessons/lesson_4.Rmd): Calculating statistics, visualizing distributions, etc. ([RPubs](https://rpubs.com/tylersimko/lesson4)).
 5. [Mapping and Merging Data](lessons/lesson_5.Rmd): Maps with `sf`, merging data. ([RPubs](https://rpubs.com/tylersimko/lesson5)).
 6. [Review and Advanced Plotting](lessons/lesson_6.Rmd): Scales, reorder, combining plots, plotting multiple datasets, etc. ([RPubs](https://rpubs.com/tylersimko/lesson6))
+7. [Text Data](lessons/lesson_7.Rmd): String detection, cleaning, dates, wordclouds, etc. ([RPubs](https://rpubs.com/tylersimko/lesson7))
+8. [Relationships](lessons/lesson_8.Rmd): Correlation, causation, confounding, controlling for variables, etc. ([RPubs](https://rpubs.com/tylersimko/lesson8))
