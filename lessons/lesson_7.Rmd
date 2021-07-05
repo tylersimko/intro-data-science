@@ -1,0 +1,322 @@
+---
+title: "Lesson 7: Text Data"
+author: "Tyler Simko"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  bookdown::html_document2:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Getting Started
+
+We have primarily used nice, clean data in datasets. However, sometimes we will need to work with our data to extract the information we want. This process is called **data cleaning** and will inevitably be a large part of your project and all analyses you do in the future.
+
+**Text data** is one of the most common types of data you will need to work with.
+
+Today, we'll learn about text data by using a dataset of about 4000 popular movies from [The Movie Database (TMDb)](https://www.themoviedb.org/).[^1] 
+
+[^1]: TMDb dataset comes from, created using their API: [Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata?select=tmdb_5000_credits.csv).
+
+----------------------------------------------------------------------------------------
+ Name                          Description
+ ----------------------------- ---------------------------------------------------------
+ `title`                        Movie name
+ 
+ `tagline`                      Tagline
+ 
+ `release_date`                 Release date (MM/DD/YY)
+ 
+ `genres`                       Genres (separated by comma)
+ 
+ `budget`                       Budget (in dollars)
+ 
+ `revenue`                      Revenue (in dollars)
+ 
+ `runtime`                      Runtime (in minutes)
+ 
+ `status`                       Released, rumored, post-production, etc.
+ 
+ `keywords`                     List of keywords
+ 
+ `vote_average`                 Average quality vote on TMDb (from 0 - 10)
+ 
+ `vote_count`                   Number of votes on TMDb
+ 
+ `production`                   Production companies (separated by comma)
+ 
+ `english`                      English is spoken language (1) or not (0)
+-------------------------------------------------------------------------------
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(patchwork)
+
+movies <- read_csv("data/movies.csv")
+```
+
+### Exercise
+
+1. Before we dive in, let's get accustomed to the data. Looking at the columns in the table above, develop a research question relating an explanatory variable (EV) to a dependent variable (DV). Develop a simple **hypothesis** and an explanation for why the hypothesis might be true. You might start by thinking about the simple numeric columns in the dataset and whether there could be a relationship between them (`budget`, `revenue`, `vote_average`, etc.).
+
+2. Next, create a simple plot to test your hypothesis. What do you find?
+
+```{r}
+```
+
+# 2. String Detection
+
+So far, we have **compared** data in relatively simple ways - equality with `==`, greater than or less than for numbers, etc. However, comparisons can be difficult with text data.
+
+For example, you may simply want to filter the `movies` dataset to all Action movies. However, look at the `genres` column:
+
+```{r}
+# look at first five entries of genres column
+movies$genres[1:5]
+```
+
+Here, you can see that filtering to `genres == "Action"` will not work. In plain words, what do we want to do here?
+
+Well, we don't care if the `genres` column is exactly equal to "Action". Instead, we want to know whether the word "Action" is anywhere in the string. For example:
+
+```{r}
+# this is an action movie!
+"Action, Adventure, Crime"
+
+# this is not
+"Adventure, Fantasy, Drama"
+```
+
+`str_detect()` is a function that will check whether or not a string (the `genres` column) contains a smaller string of our choice ("Action"). Let's try it:
+
+```{r}
+str_detect(string = "Action, Adventure, Crime",
+           pattern = "Action")
+
+str_detect(string = "Adventure, Fantasy, Drama",
+           pattern = "Action")
+```
+
+### Exercise
+
+1. Some letters are probably pretty rare in movie titles. Using `str_detect()`, create a column called `hasQ` that is `TRUE` if a movie title has a capital Q in the title. Then filter to those movies and save them to an object called `q_movies`.
+
+```{r}
+q_movies <- movies %>%
+  mutate(hasQ = str_detect(title, "Q")) %>%
+  filter(hasQ)
+```
+
+2. The `arrange()` function will sort a dataset by the values of a column. By default, `arrange()` will sort in ascending order (smallest to largest). Check the documentation for arrange to find the `desc()` function, which you can use together with `arrange()` to sort in descending order. Scroll down to the examples to see how this works with the `%>%`. Then, sort `q_movies` in descending order by budget to find the movie with a capital Q in the title that has the largest budget.
+
+```{r}
+q_movies %>% 
+  arrange(desc(budget))
+```
+
+### Plotting that information
+
+Awesome, now let's try it on our dataset. We will use it to make a new column called `action`. `action` will be TRUE if it's an Action movie and FALSE otherwise.
+
+```{r}
+movies <- movies %>%
+  mutate(action = str_detect(string = genres, pattern = "Action"))
+```
+
+```{r}
+movies %>%
+  ggplot(aes(x = action, y = budget, fill = action)) + 
+    geom_boxplot() + 
+    coord_flip() + 
+    theme_bw() + 
+    labs(title = "Do action movies have larger budgets?")
+
+movies %>%
+  group_by(action) %>%
+  summarise(mean_b = mean(budget, na.rm = TRUE),
+            median_b = median(budget, na.rm = TRUE))
+
+```
+
+### Exercise
+
+1. Choose a film production company from the `production` column (you can call `View(movies)` to look through some examples). Create a column that is `TRUE` if the film was produced by that company and `FALSE` otherwise. Then, create a boxplot that compares the budget of films made by that company with all other companies. Describe what you find.
+
+```{r}
+movies %>%
+  mutate(disney = str_detect(production, "Walt Disney")) %>%
+  ggplot(aes(x = disney, y = budget, fill = disney)) + 
+    geom_boxplot() + 
+    theme_bw()
+```
+
+```{r}
+## Alternate way to do this
+movies %>%
+  mutate(disney = case_when(str_detect(production, "Walt Disney") ~ "Disney",
+                             str_detect(production, "Marvel") ~ "Marvel",
+                             TRUE ~ "Other")) %>%
+  ggplot(aes(x = disney, y = budget, fill = disney)) + 
+    geom_boxplot()
+```
+
+# 3. Working with Dates
+
+R also has built-in classes for dates, which allow us to manipulate and compare dates.
+
+Without any changes, R can often guess correctly and compare dates naturally. For example:
+
+```{r}
+movies$release_date[1:5]
+
+movies %>%
+  ggplot(aes(x = release_date, y = budget)) + 
+    geom_point() + theme_bw()
+```
+
+However, what if you want to do more complex things with dates? For example, what if you want to figure out what day, month, or year is in the date. This would be useful if you wanted to, for example, choose every movie released in 2020 or October.
+
+Thankfully, there are functions in `tidyverse` for this:
+
+```{r}
+# get the first entry of release date
+example <- movies$release_date[1]
+year(example)
+month(example)
+day(example)
+```
+
+Once you've created a day, month, or year from `release_date`, you can use it just like you've used other values. For example, you can filter by numeric values by year:
+
+```{r}
+# create a column for year
+movies %>%
+  mutate(year = year(release_date)) %>%
+  filter(year %in% 2000:2020) %>%
+  ggplot(aes(x = budget, y = revenue)) + 
+    geom_point()
+```
+
+### Exercise
+
+1. With your group, figure out a way to add up the number of horror movies released in each month of the year. Which month has the most? Use the functions you know so far to calculate these numbers.
+
+```{r}
+month_sum <- movies %>%
+  mutate(month = month(release_date),
+         horror = str_detect(string = genres, pattern = "Horror")
+         ) %>%
+  group_by(month) %>%
+  summarise(h_count = sum(horror))
+month_sum
+```
+
+2. Save the values you calculated in question 1 to an object. Use that object to create a plot visualizing your results (a `geom_col()` might look nice, but feel free to be creative).
+
+```{r}
+month_sum %>% 
+  ggplot(aes(x = factor(month), y = h_count)) +
+    geom_col() + 
+    theme_linedraw()
+```
+
+# 4. Word clouds
+
+Notice the `keywords` column tells you a little bit about what is featured in each movie:
+
+```{r}
+movies$keywords[1]
+```
+
+What if we were interested in exploring patterns of keywords between different types of movies? I wrote the function `count_keywords()` below for us to use. Given a dataset `df` and a number `top_n`, the function will return the top keywords used in that dataset.
+
+The function is a little more complicated than might be able to read now (it uses a class called 'lists'), but you may be able to figure out what it is doing. feel free to ask, but don't worry too much about it!
+
+```{r}
+count_keywords <- function(df, top_n) {
+
+  df %>%
+    # create list from keywords, separated by comma
+    mutate(keywords_split = strsplit(keywords, ", ")) %>% 
+    select(keywords_split) %>% 
+    # unnest list into separate rows
+    unnest(cols = c(keywords_split)) %>% 
+    rename(keyword = keywords_split) %>% 
+    group_by(keyword) %>%
+    summarise(count = n()) %>% 
+    # remove irrelevant keywords
+    filter(!(keyword %in% c("", 
+                          "duringcreditsstinger", 
+                          "aftercreditsstinger"))) %>% 
+    ungroup() %>%
+    # sort by count
+    arrange(desc(count)) %>%
+    # take top_n rows by count
+    slice(1:top_n)
+
+}
+
+movies %>% 
+  mutate(scifi = str_detect(genres, "Fantasy")) %>% 
+  filter(scifi == TRUE) %>% 
+  count_keywords(top_n = 10) %>% 
+  ggplot(aes(x = keyword, y = count)) + 
+    geom_col() + 
+    theme_minimal() + 
+    coord_flip()
+```
+
+We can also visualize the counts with the text itself. **Word clouds** do just that. Load the `ggwordcloud` library and we'll try it out:
+
+```{r}
+library(ggwordcloud)
+
+movies %>%
+   mutate(scifi = str_detect(genres, "Science Fiction")) %>%
+   filter(scifi == TRUE) %>%
+   count_keywords(top_n = 50) %>% 
+   ggplot(aes(label = keyword, size = count)) +
+    geom_text_wordcloud(color = "darkblue") + 
+    scale_size_area(max_size = 10)
+```
+
+### Exercise
+
+1. Think of a research question involving keywords and movie descriptions. For example, did the types of Science Fiction movies being made significantly change between the Atomic Age and today? Create **two** wordclouds to compare the keywords used in two different types of movies. For example, two different production companies, or the same genre in two different time periods.
+
+```{r}
+library(ggwordcloud)
+
+dm <- movies %>%
+   mutate(scifi = str_detect(production, "Disney")) %>%
+   filter(scifi == TRUE) %>%
+   count_keywords(top_n = 20) %>% 
+   ggplot(aes(label = keyword, size = count)) +
+    geom_text_wordcloud(color = "darkblue") +
+    theme_minimal() + 
+    scale_size_area(max_size = 7) + 
+    labs(title = "Disney Movies")
+
+mm <- movies %>%
+   mutate(scifi = str_detect(production, "Marvel")) %>%
+   filter(scifi == TRUE) %>%
+   count_keywords(top_n = 20) %>% 
+   ggplot(aes(label = keyword, size = count)) +
+    geom_text_wordcloud(color = "darkred") + 
+    theme_minimal() + 
+  scale_size_area(max_size = 7) + 
+    labs(title = "Marvel Movies")
+
+dm + mm
+
+```
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
