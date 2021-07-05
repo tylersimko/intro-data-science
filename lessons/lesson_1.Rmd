@@ -74,6 +74,12 @@ R can also use **Boolean** values, which are `TRUE` or `FALSE` depending on how 
 
 ```
 
+3. Check if 4017 is equal to 2098 plus 1919 below.
+
+```{r}
+
+```
+
 ---
 
 # 2. Objects
@@ -111,6 +117,18 @@ number
 ```
 
 3. Use `==` to see whether `answer` is equal to 12. 
+
+```{r}
+
+```
+
+4. Assign your name to an object called `name`.
+
+```{r}
+
+```
+
+5. Try adding 1 to the object containing your name. What happens?
 
 ```{r}
 
@@ -161,6 +179,7 @@ Is this the same as `number`?
 
 ```{r}
 number
+number == answer * answer
 ```
 
 It worked!
@@ -185,7 +204,7 @@ To learn how a function works, you can type `?` followed by the name of the func
 
 ```
 
-2. Create an object called `name` with your name. Now, go in the console and type `?abs` to open the documentation for the `abs()` function. Come up with an example that shows what it does. 
+2. Now, go in the console and type `?abs` to open the documentation for the `abs()` function. Come up with an example that shows what it does. 
 
 ```{r}
 
@@ -216,7 +235,7 @@ We've already learned a lot of terminology. Above, we used a **vector** called `
 
 ```
 
-2. What happens if you run `prices + 1`? What is this doing?
+2. What happens if you run `prices + 1`? What is this doing? How about `prices == 8`?
 
 ```{r}
 
