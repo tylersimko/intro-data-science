@@ -1,5 +1,5 @@
 # Fundamentals of Data Science Using R
-Contains all of the materials for my Summer 2021 course: Fundamentals of Data Science.
+Contains all of the materials for my Summer 2021 course: [Fundamentals of Data Science](https://tylersimko.com/syllabus) for [South Amboy High School](http://www.sapublicschools.com/).
 
 This course uses R and covers an introduction to data analysis and data visualization. 
 
